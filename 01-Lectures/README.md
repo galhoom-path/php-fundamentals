@@ -512,6 +512,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show the everyday math functions `intdiv()`, `round()`, `abs()`, `min()`, and `max()`
 - Show `++`/`--` on numbers, and note that PHP 8.5 deprecates `++` on non-numeric strings (use `str_increment()`)
 - Show operator precedence with `2 + 3 * 4` and recommend parentheses whenever the order is not obvious
+- Show that dividing by zero stops the script with a `DivisionByZeroError`; say that catching it is taught in PHP OOP Lecture 25, so for now check the divisor first
 - Note that PHP 8.5 deprecates the backtick operator; never use it
 - Show `==` vs `===` with `0 == "0"` and `0 === "0"`, and recommend `===` by default
 - Show the spaceship operator `<=>` returning -1, 0, or 1
@@ -615,6 +616,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Note that PHP 8.5 warns when destructuring a non-array value
 - Note that PHP 8.5 deprecates `null` as an array key; use `''` if an empty key is really needed
 - Explain that a PHP array is an ordered map: keys keep insertion order
+- Show that `$copy = $list;` makes an independent copy: changing `$copy` does not change `$list` (PHP OOP Lecture 20 contrasts this with objects)
 **PHP Manual Reference:** https://www.php.net/manual/en/language.types.array.php
 
 ---
@@ -917,6 +919,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
   - A create-note form with validation, CSRF, flash messages, and Post/Redirect/Get
   - A delete action that accepts POST only
 - Walk through the entire project file by file
+- End by naming the pain: every function receives and returns loose `$note` arrays, and nothing stops a note from missing a key. Say that PHP OOP Lecture 1 ("Why Functions Alone Are Not Enough") starts from exactly this problem
 
 ---
 
@@ -1001,7 +1004,7 @@ If the student wants to skip to a later lecture:
 - Do not move to the next lecture until the student passes the CHECK step
 - Do not skip the analogy and go straight to code
 - Do not repeat the full summary if the student already passed the CHECK and is ready to move on
-- Do not teach anything covered by the PHP OOP repository: classes, objects, properties, methods, constructors, visibility, property hooks, inheritance, static class members, class constants, abstract classes, interfaces, polymorphism, type declarations and `strict_types`, traits, magic methods, object handles, cloning, readonly, namespaces and autoloading, enums, exceptions and `try/catch`, attributes, anonymous classes, lazy objects, serialization, and PHPUnit. If a student asks, give a one-sentence answer and point to the matching PHP OOP lecture
+- Do not teach anything covered by the PHP OOP repository: classes, objects, properties, methods, constructors, visibility, property hooks, inheritance, static class members, class constants, abstract classes, interfaces, polymorphism, type declarations and `strict_types` (including nullable and union types, `instanceof`, and the nullsafe operator `?->`), covariance and contravariance, traits, magic methods, object handles, `final`, cloning and `clone with`, readonly, namespaces and autoloading, enums, exceptions and `try/catch`, attributes (including `#[\NoDiscard]` and the `(void)` cast), anonymous classes and object iteration, lazy objects, late static binding, object comparison, serialization, and PHPUnit. If a student asks, give a one-sentence answer and point to the matching PHP OOP lecture
 - Do not teach databases (PDO), Composer, or frameworks; they come after the PHP OOP repository
 - Do not assume the student knows the terminal, HTML, or how the web works. If any of these are needed, explain the minimum required steps
 - Do not teach deprecated or outdated features as the main approach (for example `mysql_*`, `md5` for passwords, the backtick operator, `(integer)` casts)
