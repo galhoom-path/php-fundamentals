@@ -54,9 +54,9 @@ together with this file, and it will generate the full scaffold for you.
 
 | Created by the scaffold (AI or you, once) | Written by the learner (during study, by hand) |
 |:---|:---|
-| Root `README.md` | Every `code-N.<ext>` / `practice-N.md` file |
-| `01-Lectures/README.md` (full curriculum + rules) | Every `review-N.md` file |
-| Empty lecture folders (`Lecture-NN-topic/`) | Every `Milestone/` solution |
+| Root `README.md` | The content of every `code-N.<ext>` / `practice-N.md` file |
+| `01-Lectures/README.md` (full curriculum + rules) | The blanks of every `review-N.md` stub |
+| Lecture folders with empty `code-1`…`code-6` stubs and a `review-7.md` stub (see [Section 10.4](#104-lecture-scaffold-stubs)) | Every `Milestone/` solution |
 | `02-Interview-Questions/README.md` | Every question's `code-N.<ext>` and `notes.md` |
 | One `README.md` inside every question folder | All final-project source files, tests, `notes.md` |
 | `03-Final-Project/README.md` | Progress check marks (✅) after passing each CHECK |
@@ -109,6 +109,8 @@ After generating a repo, a search for `{{` outside `template.md` must return no 
 | `{{PROJECT_MILESTONE_COUNT}}` | Final project milestones (from 00) | `15` (00–14) |
 | `{{OUT_OF_SCOPE}}` | Topics explicitly excluded (they belong to another repo) | `Design patterns, SOLID` |
 | `{{LAST_VERIFIED_DATE}}` | Date sources were last checked (YYYY-MM-DD) | `2026-10-15` |
+| `{{PREVIOUS_REPO}}` / `{{PREVIOUS_REPO_URL}}` | The study repo that comes **before** this one in the series, or `None` | `PHP Fundamentals` / `https://github.com/...` |
+| `{{NEXT_REPO}}` / `{{NEXT_REPO_URL}}` | The study repo that comes **after** this one in the series, or `None` | `OOD` / `https://github.com/...` |
 
 ---
 
@@ -134,6 +136,14 @@ These principles are copied into every repository and never change between subje
 13. **Strict scope:** each repo covers one subject. Neighboring subjects get a one-sentence answer and a redirect.
 14. **20/80 focus:** teach the 20% of concepts that deliver 80% of real-world use first.
     Rare and edge-case features come late or are left out.
+15. **Series without overlap:** every repo is one link in a learning series
+    (`{{PREVIOUS_REPO}}` → this repo → `{{NEXT_REPO}}`). A lecture taught in another repo of the series
+    is never taught again. This repo starts exactly where `{{PREVIOUS_REPO}}` stops and teaches everything
+    `{{NEXT_REPO}}` assumes. Topics owned by a neighbor go into `{{OUT_OF_SCOPE}}` with a pointer to the
+    matching lecture there.
+16. **Living repo:** the repo always follows the latest stable version of `{{SUBJECT}}`. When a new version
+    is released, the same repo is updated (never forked into a new one) using the procedure in
+    [Section 4.4](#44-version-update-procedure-living-repo).
 
 ---
 
@@ -161,7 +171,7 @@ Not allowed as the only source: random blog posts, unverified tutorials, AI-gene
 - Mark version-specific features in titles, for example `Property Hooks (PHP 8.4)`.
 - Prefer modern idioms over legacy ones. When a legacy approach is still common in real code, show it once, label it as legacy, then show the modern way.
 - Record `Last verified: {{LAST_VERIFIED_DATE}}` in the root README under Official Sources.
-- When a new major version is released mid-study, update the outline only for lectures not yet completed.
+- When a new version is released, update the repo with the procedure in [Section 4.4](#44-version-update-procedure-living-repo).
 
 ### 4.3 Citation rules
 
@@ -176,6 +186,23 @@ Not allowed as the only source: random blog posts, unverified tutorials, AI-gene
 
 - Use deep links to the exact page or section, not only the homepage.
 - One URL per concept is enough. Use `Sources:` (plural) when a question depends on more than one page.
+
+### 4.4 Version update procedure (living repo)
+
+Run this every time a new stable version of `{{SUBJECT}}` is released. The repo is updated in place.
+
+1. Read the official release notes and migration guide: new features, deprecated features,
+   backward-incompatible changes, and new functions.
+2. Add each relevant new feature to the outline of the lecture where it fits, marked with its version,
+   for example `(PHP 8.6)`. Add a new lecture only when a feature is a whole new concept that fits no
+   existing lecture; then update every count, folder, and link (Section 16, Consistency).
+3. Replace deprecated features with their modern alternative, or keep them once labeled as deprecated.
+   Apply the same change to interview questions and the final project.
+4. Features owned by `{{PREVIOUS_REPO}}` or `{{NEXT_REPO}}` go to that repo, not this one (principle 15).
+5. Completed lectures keep their ✅. New items in a completed lecture become a short catch-up session,
+   listed under Current Focus in the root README until the learner reviews them.
+6. Update `{{SUBJECT_VERSION}}` everywhere (badges, titles, Requirements, Official Sources),
+   update the `Last verified` date, and add a row to the Version History table in the root README.
 
 ---
 
@@ -254,8 +281,8 @@ Rules:
 What exists **at scaffold time** (before studying starts):
 
 - `README.md` (root), `01-Lectures/README.md`, `02-Interview-Questions/README.md`, `03-Final-Project/README.md`.
-- Every `Part-N-*/Lecture-NN-*/` folder. Git does not track empty folders, so either add a `.gitkeep`
-  or let the learner create `code-1` when the lecture starts.
+- Every `Part-N-*/Lecture-NN-*/` folder, each containing empty `code-1` … `code-6` files and a
+  `review-7.md` stub as described in [Section 10.4](#104-lecture-scaffold-stubs).
 - Every `Question-NN-*/README.md`.
 - `.cursor/rules/template-sync.mdc` — copied as-is from [Section 18](#18-template-sync-rule-keep-this-file-a-mirror).
 - `.gitignore` only when the subject uses a package manager or produces build output.
@@ -314,8 +341,9 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 10. 🚀 How to Start.
 11. 📁 Repository Structure.
 12. ⚙️ Requirements.
-13. 🔗 Official Sources (with `Last verified` date).
-14. Centered footer.
+13. 🔄 Staying Current — living-repo rule and Version History table.
+14. 🔗 Official Sources (with `Last verified` date).
+15. Centered footer.
 
 ### Template
 
@@ -376,6 +404,7 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 | 🚀 | [How to Start](#-how-to-start) | Your first step |
 | 📁 | [Repository Structure](#-repository-structure) | Folder map |
 | ⚙️ | [Requirements](#-requirements) | What you need |
+| 🔄 | [Staying Current](#-staying-current) | Always on the latest version |
 | 🔗 | [Official Sources](#-official-sources) | Trusted references |
 
 ---
@@ -477,6 +506,18 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 
 > ⚠️ **Complete the tracks in order.** Each track builds on the previous one.
 
+### 🔗 Series — no repeated lessons
+
+| Order | Repository | Covers |
+|:---:|:---|:---|
+| **N-1** | [{{PREVIOUS_REPO}}]({{PREVIOUS_REPO_URL}}) | {{what it covers}} |
+| **N** | **{{SUBJECT}}** *(this repo)* | {{what this repo covers}} |
+| **N+1** | [{{NEXT_REPO}}]({{NEXT_REPO_URL}}) | {{what it covers}} |
+
+<!-- Drop the previous or next row when it is None. -->
+
+> 🧭 Each repo continues where the previous one stops. A topic taught in one repo is **never** re-taught in another.
+
 ---
 
 ## 📚 Track 1 — Lectures
@@ -558,6 +599,9 @@ Part-3-{{PART_3_NAME}}/   →  Lectures NN–{{LECTURE_COUNT}}
 | **2️⃣** | ✍️ Type each example into that lecture’s `code-N.{{FILE_EXT}}` files — one session at a time | Lecture folder |
 | **3️⃣** | 💼 After all lectures, practice interview answers | [`02-Interview-Questions/`](02-Interview-Questions/) |
 | **4️⃣** | 🏗️ Build the capstone when interviews are done | [`03-Final-Project/`](03-Final-Project/) |
+| **5️⃣** | ➡️ Continue the series with [{{NEXT_REPO}}]({{NEXT_REPO_URL}}) | Next repository |
+
+<!-- Drop step 5 when {{NEXT_REPO}} is None. -->
 
 > ✍️ **Remember:** You write all the code. The guides teach; your practice files live inside each lecture folder.
 
@@ -577,6 +621,19 @@ Part-3-{{PART_3_NAME}}/   →  Lectures NN–{{LECTURE_COUNT}}
 - 📖 {{PREREQUISITES}}
 - 💻 {{local environment needed}}
 - 📦 {{TEST_TOOL}} and {{other tools}} <sub>(introduced later)</sub>
+
+---
+
+## 🔄 Staying Current
+
+> ♻️ **This is a living repo.** It always follows the latest stable {{SUBJECT}} release.
+> When a new version comes out, this same repo is updated: new features are added to the matching lectures,
+> deprecated features are replaced, and completed lectures get a short catch-up session.
+> The full procedure is in `template.md` Section 4.4.
+
+| Version | Updated on | What changed in this repo |
+|:---|:---|:---|
+| {{SUBJECT_VERSION}} | {{LAST_VERIFIED_DATE}} | Initial curriculum |
 
 ---
 
@@ -667,6 +724,12 @@ triggers:
 ## Who This Is For
 
 Student profile: {{LEARNER_PROFILE}}. Knows {{PREREQUISITES}}. Assumes nothing beyond that.
+
+**Series position:**
+
+- **Comes after:** [{{PREVIOUS_REPO}}]({{PREVIOUS_REPO_URL}}) (or "nothing — this is the starting point").
+- **Leads to:** [{{NEXT_REPO}}]({{NEXT_REPO_URL}}), which assumes exactly what this repo teaches.
+- **No-overlap rule:** every topic taught in a neighboring repo is excluded here (see "What Not To Do"). When a lecture touches one of those topics, give one sentence and point to the matching lecture there.
 
 ---
 
@@ -855,13 +918,13 @@ This is a deliberate learning rule, not a limitation. The tutor teaches by showi
 
 ### What the student does
 
-- **Write** every `code-N.{{FILE_EXT}}` file by hand in the matching lecture folder.
-- **Write** every `review-N.md` summary file by hand.
+- **Write** the content of every `code-N.{{FILE_EXT}}` file by hand in the matching lecture folder (the files already exist as empty stubs).
+- **Complete** every `review-N.md` stub by hand (replace each `_Write ... here._` blank and the reference placeholder).
 - Run the code locally (`{{RUN_COMMAND}}`) and fix errors before moving on.
 
 ### What the tutor must NOT do
 
-- Do NOT create, write, or edit any `code-N` files, `review-N.md` files, or other lecture files for the student.
+- Do NOT write content into any `code-N` files, `review-N.md` files, or other lecture files for the student (the empty scaffold stubs are the only exception).
 - Do NOT use file-writing tools to produce the lecture's code, milestone solutions, or answers.
 - Do NOT treat showing code in chat as a substitute for the student writing it themselves.
 
@@ -902,6 +965,7 @@ Use **numeric prefixes** (`01-`, `02-`, `03-`) so GitHub lists tracks in learnin
     ...
 ```
 
+- Every lecture folder is scaffolded with empty `code-1.{{FILE_EXT}}` … `code-6.{{FILE_EXT}}` and a `review-7.md` stub (title and one-sentence summary filled in; the remaining sections are blanks for the student). If a lecture needs fewer or more code blocks, delete or add files and renumber `review-N.md` so it stays last.
 - Each lecture folder is named `Lecture-NN-concise-topic`.
 - Milestone lectures use `Lecture-NN-Milestone-topic` for {{MILESTONE_LECTURES}}.
 - Code blocks are saved as `code-1`, `code-2`, ... numbered in the order they appear in the lecture.
@@ -1037,7 +1101,8 @@ If the student wants to skip to a later lecture:
 
 ## 10. File Template — Lecture Folder Files
 
-Every lecture folder contains only learner-written files.
+Every lecture folder starts as a scaffold of empty stubs ([Section 10.4](#104-lecture-scaffold-stubs)).
+The learner writes all of their content.
 
 ### 10.1 `code-N.{{FILE_EXT}}`
 
@@ -1101,6 +1166,49 @@ Avoid this common mistake — one sentence.
 - Created only inside `Lecture-NN-Milestone-*` folders.
 - Contains the learner's solution to the milestone check, using real descriptive file names
   (for example `Milestone/Product.php`), not `code-N`.
+
+### 10.4 Lecture scaffold stubs
+
+Every lecture folder is scaffolded so the learner can start studying immediately:
+
+- Empty files `code-1.{{FILE_EXT}}` … `code-6.{{FILE_EXT}}` (no content at all).
+- A `review-7.md` stub with only the title and the one-sentence summary filled in; every other part is a blank:
+
+```markdown
+# Lecture NN — Short Topic Title
+
+> One or two sentences that capture the heart of this lecture (written by the scaffold).
+
+---
+
+## What you learned
+
+1. _Write your first summary point here._
+2. _Write your second summary point here._
+3. _Write your third summary point here._
+
+---
+
+## Key rule
+
+> _Write one clear sentence to remember._
+
+---
+
+## Watch out
+
+Avoid this common mistake — _write one clear sentence here._
+
+---
+
+## Official reference
+
+[_Link label — add the {{PRIMARY_SOURCE_NAME}} URL from the lecture outline_]({{PRIMARY_SOURCE_URL}})
+```
+
+- If a lecture needs fewer or more code blocks, the learner deletes or adds `code-N` files and renames
+  `review-N.md` so it is always the highest number.
+- `Milestone/` folders are not scaffolded; the learner creates them during the milestone check.
 
 ---
 
@@ -1700,14 +1808,16 @@ Sources and freshness
 - [ ] Every question README ends with a `Source:` / `Sources:` line.
 - [ ] No deprecated feature is taught as the main approach.
 - [ ] `Last verified` date written in the root README.
+- [ ] Root README has the Staying Current section with a Version History row for {{SUBJECT_VERSION}}.
 
 Structure
 - [ ] Root has exactly: README.md, template.md, .cursor/rules/template-sync.mdc, 01-Lectures/, 02-Interview-Questions/, 03-Final-Project/ (+ optional .gitignore).
 - [ ] `template.md` has a `Template last synced` date at the top.
 - [ ] Every lecture folder exists with the correct `Lecture-NN-slug` name inside the correct part.
+- [ ] Every lecture folder contains empty `code-1` … `code-6` stubs and a `review-7.md` stub (Section 10.4).
 - [ ] Milestone lectures use `Lecture-NN-Milestone-slug` and match {{MILESTONE_LECTURES}}.
 - [ ] Every question folder exists with its README.md.
-- [ ] No learner practice files were pre-generated.
+- [ ] No learner content was pre-written (only the empty lecture stubs from Section 10.4 exist).
 
 Content
 - [ ] Lecture 01 explains the problem, not the solution.
@@ -1718,6 +1828,8 @@ Content
 - [ ] Every lecture is covered by at least one interview question.
 - [ ] Every lecture appears in the final project's Concept Coverage Checklist.
 - [ ] Out-of-scope topics are listed in every "What Not To Do" section.
+- [ ] No lecture or interview question repeats one from {{PREVIOUS_REPO}} or {{NEXT_REPO}}; overlapping topics point to the neighbor repo.
+- [ ] The first lecture starts where {{PREVIOUS_REPO}} stops, and the track covers everything {{NEXT_REPO}} assumes.
 
 Consistency
 - [ ] Counts match everywhere (lectures, questions, milestones) in all four README files.
@@ -1743,6 +1855,8 @@ SUBJECT: <e.g. Design Patterns in PHP>
 LEARNER PROFILE: <e.g. knows PHP OOP well, no design-pattern experience>
 PREREQUISITES: <e.g. PHP 8.5 OOP: classes, interfaces, abstract classes, traits>
 OUT OF SCOPE: <e.g. framework-specific implementations, architecture styles>
+PREVIOUS REPO IN THE SERIES: <name + URL, or None>
+NEXT REPO IN THE SERIES: <name + URL, or None>
 PRACTICE LANGUAGE / FILE EXTENSION: <e.g. PHP / php>  (use md for non-technical subjects)
 PREFERRED SIZE: <small | medium | large | let the template decide>
 
@@ -1759,18 +1873,23 @@ Rules:
    - Root README.md (Section 8 template, progress at 0, Lecture 01 = Next)
    - 01-Lectures/README.md (Section 9 template, fully filled: curriculum, analogy for every lecture,
      glossary, code standards, full outline for every lecture with a deep-link reference, milestone checks)
-   - Every Part-N-*/Lecture-NN-*/ folder (empty, with .gitkeep)
+   - Every Part-N-*/Lecture-NN-*/ folder with empty code-1..code-6 stubs and a review-7.md stub (Section 10.4)
    - 02-Interview-Questions/README.md (Section 11 template, full question list + source map)
    - One README.md per question folder (Section 12 template, Source line last)
    - 03-Final-Project/README.md (Section 13 template, real business scenario, milestones 00..NN,
      concept coverage for every lecture)
    - .cursor/rules/template-sync.mdc (copied exactly from Section 18)
    - Keep template.md in the repo root and set its "Template last synced" date to today
-5. Do NOT create any learner practice files (code-N, review-N.md, notes.md, Milestone/, src/, tests/).
+5. Do NOT write any learner content: the code-N stubs stay empty, review-N.md stubs keep their blanks,
+   and notes.md, Milestone/, src/, tests/ are not created.
 6. Follow every naming convention in Section 7.
 7. Finish by running the Repository Creation Checklist in Section 16 and report any item that failed.
-8. From now on, follow the Template Sync Rule (Section 18): any change to structure, conventions,
+8. Series without overlap (Section 3, principle 15): read the curricula of the previous and next repos first.
+   Do not repeat any of their lectures or questions; list their topics in OUT OF SCOPE with pointers.
+9. From now on, follow the Template Sync Rule (Section 18): any change to structure, conventions,
    or method must update template.md in the same change.
+10. Living repo (Section 3, principle 16): include the Staying Current section in the root README.
+    When a new version is released, update this same repo with Section 4.4.
 ````
 
 ### Session prompts (daily use in a new chat)
@@ -1793,9 +1912,10 @@ Final project:
 Mark progress (after I pass the CHECK):
   Apply the Progress Update Protocol in template.md Section 15 for Lecture NN / Question NN / Milestone NN.
 
-Refresh sources (when a new version is released):
-  Check the official release notes for {{SUBJECT}}. List new, changed, and deprecated features that affect
-  lectures I have not completed yet, propose outline updates, and update the Last verified date.
+Update to a new version (when a new version is released):
+  Run the Version update procedure in template.md Section 4.4 for {{SUBJECT}} <new version>.
+  Read the official release notes and migration guide, update the lecture outlines, questions, and project,
+  list catch-up items for lectures I already completed, and add a Version History row.
 
 Sync the template (after changing structure, conventions, or method):
   Apply the Template Sync Rule in template.md Section 18. Compare the repo with template.md,
