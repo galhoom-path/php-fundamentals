@@ -37,7 +37,7 @@ Every interview question must be handled like a lecture:
 - Mark the question with ✅ only after the student can answer it clearly and pass the practice task.
 - Always keep a `Source:` line at the end of each question folder's `README.md`.
 
-This track stays inside core PHP. Do not ask OOP questions (classes, interfaces, traits, enums, exceptions, namespaces, PHPUnit, type declarations); they belong to the [PHP OOP repository](https://github.com/Galhoom22/php-oop-documentation) interview track. Do not ask about databases, Composer, or frameworks.
+This track stays inside core PHP. Do not ask OOP questions (classes, interfaces, traits, enums, exceptions, namespaces, PHPUnit, type declarations); they belong to the [PHP OOP repository](https://github.com/galhoom-study-method/php-oop) interview track. Do not ask about databases, Composer, or frameworks.
 
 ### Interview Track Review Checklist
 
