@@ -31,7 +31,7 @@
 > with **PHP 8.5+**. All lectures follow the
 > [**official PHP Manual**](https://www.php.net/manual/en/langref.php),
 > with interview questions and a final project to master it all.
-> It is the **first link** in a series: **PHP Fundamentals → [PHP OOP](https://github.com/galhoom-study-method/php-oop) → OOD**.
+> It is the **first link** in a series: **PHP Fundamentals → [PHP OOP](https://github.com/galhoom-path/php-oop) → OOD**.
 
 <br/>
 
@@ -314,7 +314,7 @@ PHP powers a large part of the web — from WordPress and Laravel to custom APIs
 | Order | Repository | Covers |
 |:---:|:---|:---|
 | **1** | **PHP Fundamentals** *(this repo)* | The core language, functions, and web basics — no OOP |
-| **2** | [PHP OOP](https://github.com/galhoom-study-method/php-oop) | Classes, objects, interfaces, traits, enums, exceptions, namespaces, PHPUnit |
+| **2** | [PHP OOP](https://github.com/galhoom-path/php-oop) | Classes, objects, interfaces, traits, enums, exceptions, namespaces, PHPUnit |
 | **3** | OOD | Design principles and patterns built on OOP |
 
 > 🧭 Each repo continues where the previous one stops. A topic taught in one repo is **never** re-taught in another.
@@ -456,7 +456,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 | **2️⃣** | ✍️ Type each example into that lecture’s `code-N.php` files — one session at a time | Lecture folder |
 | **3️⃣** | 💼 After all 30 lectures, practice interview answers | [`02-Interview-Questions/`](02-Interview-Questions/) |
 | **4️⃣** | 🏗️ Build the capstone when interviews are done | [`03-Final-Project/`](03-Final-Project/) |
-| **5️⃣** | ➡️ Continue the series with [PHP OOP](https://github.com/galhoom-study-method/php-oop) | Next repository |
+| **5️⃣** | ➡️ Continue the series with [PHP OOP](https://github.com/galhoom-path/php-oop) | Next repository |
 
 <br/>
 

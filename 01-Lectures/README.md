@@ -32,7 +32,7 @@ Student profile: no computer science background and no programming experience. C
 **Series position:** this is repository 1 of the series.
 
 - **Comes after:** nothing — this is the starting point.
-- **Leads to:** [PHP OOP](https://github.com/galhoom-study-method/php-oop), which assumes exactly what this repo teaches (variables, types, arrays, functions, loops, conditions, HTML output, running a PHP file).
+- **Leads to:** [PHP OOP](https://github.com/galhoom-path/php-oop), which assumes exactly what this repo teaches (variables, types, arrays, functions, loops, conditions, HTML output, running a PHP file).
 - **No-overlap rule:** every topic taught in the PHP OOP repository is excluded here (see "What Not To Do"). When a lecture touches one of those topics, give one sentence and point to the matching OOP lecture.
 
 ---
