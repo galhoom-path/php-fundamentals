@@ -1,3 +1,7 @@
+> 🛤️ **Part of [Galhoom Path](https://github.com/galhoom-path)** · Track 1 — Study (Learning Series **#1**)  
+> This repository belongs to the **Galhoom Path** organization (**Study** · **Problem Solving** · **Interview Prep**).  
+> → [Organization home](https://github.com/galhoom-path) · Next in series: [php-oop](https://github.com/galhoom-path/php-oop)
+
 <div align="center">
 
 # 📘 PHP Fundamentals Documentation
