@@ -577,6 +577,9 @@ Part-3-Web-PHP/       →  Lectures 21–30
 |:---|:---|
 | 🐘 PHP Manual — Language Reference | [php.net/manual/en/langref.php](https://www.php.net/manual/en/langref.php) |
 | 🆕 PHP 8.5 Release Notes | [php.net/releases/8.5](https://www.php.net/releases/8.5/en.php) |
+| 🌐 MDN — How the Web Works | [developer.mozilla.org/.../How_the_web_works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works) |
+| 🌐 MDN — Client–Server Overview | [developer.mozilla.org/.../Client-Server_overview](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview) |
+| 🌐 MDN — HTTP Overview | [developer.mozilla.org/.../HTTP/Guides/Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview) |
 | 🔐 OWASP Cheat Sheet Series | [cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/) |
 | 📏 PSR-12 Coding Style | [php-fig.org/psr/psr-12](https://www.php-fig.org/psr/psr-12/) |
 

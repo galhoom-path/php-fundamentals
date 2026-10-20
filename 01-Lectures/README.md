@@ -191,10 +191,10 @@ Then run the CHECK step from the iterative cycle.
 Use these analogies in the matching lectures. Build similar ones for anything not covered here.
 
 **Lecture 1 - Why PHP:**
-A printed restaurant menu is the same for every customer. It cannot show "today's special" or greet you by name. A waiter who reads your order, checks the kitchen, and brings back exactly what you asked for is different. Plain HTML is the printed menu. PHP is the waiter: it runs on the server, prepares a fresh page for each request, and hands it back.
+A printed restaurant menu is the same for every customer. It cannot show "today's special" or greet you by name. A waiter who reads your order, checks the kitchen, and brings back exactly what you asked for is different. Plain HTML is the printed menu. The web server is the front desk that takes the order; PHP is the kitchen that cooks a fresh plate for this guest; the browser is the guest who only sees the finished plate, never the recipe. JavaScript in the browser is like a customer rearranging their own plate after the food arrives — useful, but a different job from the kitchen.
 
 **Lecture 2 - Setup and First Script:**
-Installing PHP is like hiring a translator. Your `.php` file is a letter written in a language the computer does not speak. The translator (the `php` program) reads the letter line by line and performs what it says. The `<?php` tag is the line that says "translator, start reading here."
+Installing PHP is like hiring a translator. Your `.php` file is a letter written in a language the computer does not speak — ink on paper, unable to move itself. The translator (the `php` program, powered by the Zend Engine) reads the letter line by line and performs what it says. The `<?php` tag is the line that says "translator, start reading here." The translator cannot open doors or flip light switches alone: it asks the building manager (the operating system) to print to the terminal or read a file. The web server is the front desk that accepts visitors; PHP is the translator in the back office. In production they often talk through PHP-FPM (a pool of translators ready to work). In this course the built-in server (`php -S`) plays both front desk and translator for learning.
 
 **Lecture 3 - Variables and Constants:**
 A variable is a labeled jar on a kitchen shelf. You can empty it and fill it with something else at any time. A constant is a jar with the lid glued shut: you fill it once, and from then on everyone can read the label but nobody can change what is inside.
@@ -442,13 +442,27 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 **Concepts:**
 - Static HTML pages are identical for every visitor and cannot react to input
 - A server-side language builds a fresh response for each request
+- Server-side (PHP) runs on the server before the page is sent; client-side (JavaScript) runs in the browser after the page arrives
+- The request lifecycle: browser → web server → PHP → (optional data store) → response back to the browser
 **Content:**
 - Use the restaurant menu and waiter analogy
 - Show a plain HTML page and ask: how would it greet each visitor by name, or show today's date?
-- Draw the request/response cycle in words: browser asks, server runs PHP, server sends HTML back
+- Walk the PHP request lifecycle in plain English (no code yet):
+  1. Browser sends an HTTP request (typed URL or clicked link)
+  2. A web server (Apache, Nginx, or for learning `php -S`) receives it; if the target is a `.php` file, it hands the request to PHP instead of returning the file as plain text
+  3. PHP runs your logic on the server (conditions, forms, deciding what to show)
+  4. Optional data step: many real apps then talk to a database; **this course does not teach databases** — here data often comes from files/JSON instead (see the final project)
+  5. PHP builds the response (usually HTML; later also JSON or plain text)
+  6. The web server sends that response to the browser; the browser never sees the PHP source, only the output
+- Contrast a static `.html` file (returned as-is) with a dynamic `.php` file (executed first)
+- Name clients (browser/device) and servers (machines that store and run the site) in plain English; do not teach TCP packets or networking internals
 - Mention that PHP also runs scripts from the terminal (CLI), not only websites
+- One sentence only: standard PHP is powered by the Zend Engine (the core that reads and runs `.php` files); detail belongs in Lecture 2
+- Optional curiosity (not a CHECK topic): Facebook built HPHPc, then HHVM and Hack for speed; HHVM later dropped PHP and runs Hack only — they did not replace PHP. Modern PHP has its own JIT. Stop there
+- Tip for later debugging: a form that "does nothing", a blank page, or raw PHP showing in the browser usually means one lifecycle step failed — revisit this map when stuck
 - Do NOT show PHP syntax yet. This lecture is about the problem, not the solution
-**PHP Manual Reference:** https://www.php.net/manual/en/intro-whatis.php
+- Point curious students to MDN for how the web, client–server, and HTTP work (links in Official Sources)
+**PHP Manual Reference:** https://www.php.net/manual/en/introduction.php
 
 ---
 
@@ -457,13 +471,26 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 **Concepts:**
 - PHP tags, `echo`, and comments
 - Running PHP with the CLI and with the built-in web server
+- The Zend Engine is the core inside the `php` program that executes your scripts
 **Content:**
-- Use the translator analogy
+- Use the translator analogy and name the Zend Engine as that translator's core
+- Say a `.php` file is plain text on disk — it cannot run itself. Typing `php app.php` asks the OS to start the installed `php` program (the CLI SAPI), which reads the file and runs it
+- One sentence only: PHP does not talk to the screen or disk by itself; it asks the operating system (via the OS API / system calls) to print, read files, and allocate memory. Do not teach Linux internals
 - Install PHP 8.5 for the student's operating system and verify with `php -v`
 - Show the smallest script: `<?php echo "Hello";` and run it with `php code-1.php`
 - Show the three comment styles and say every example in this course annotates every line
-- Show mixing PHP and HTML, then run `php -S localhost:8000` and open the page in a browser
+- Show mixing PHP and HTML in one `.php` file: PHP runs on the server; the browser receives the finished HTML (and any CSS/JS you echoed or wrote outside PHP tags)
+- Run `php -S localhost:8000` and open the page in a browser; say that production sites usually use Apache or Nginx with PHP, but this course uses the built-in server for learning
 - Explain why files that contain only PHP omit the closing `?>` tag
+- Why CLI matters beyond demos (names only, no setup): web requests have timeouts and a request/response limit; CLI is for scheduled jobs (cron), long-running tools, and heavy work that would time out in a browser. The CLI SAPI defaults `max_execution_time` to unlimited
+- Optional one-liner only: PHP 8+ can use JIT to speed up some long-running work; beginners do not configure it here
+- Optional curiosity (not a CHECK topic) — web server vs PHP are two jobs: the web server receives the request; PHP runs the script. How they connect, in plain English only:
+  - **CGI:** start a new PHP process for every request (simple, slow under load)
+  - **FastCGI:** keep PHP processes running and reuse them (faster than CGI)
+  - **PHP-FPM:** the modern FastCGI process manager most hosts use today (especially with Nginx); pools of workers, better control. One intuition only: too few workers → requests wait; too many → the server can run out of RAM. Hosts tune pool size later (`pm` modes like static/dynamic/ondemand) — not in this course
+  - **mod_php:** PHP embedded inside Apache workers (easy historically; the PHP Manual now says prefer PHP-FPM for new installs)
+  - Do **not** install Nginx, Apache modules, or PHP-FPM in this course — know the names so hosting panels and docs make sense later. Do **not** teach `www.conf`, `pm.max_children`, or production tuning here
+  - Optional: `PHP_SAPI` / `php_sapi_name()` reports which interface is running (`cli`, `cli-server`, `fpm-fcgi`, …) — show once if curious; not required for the CHECK
 **PHP Manual Reference:** https://www.php.net/manual/en/language.basic-syntax.phptags.php
 
 ---
@@ -775,14 +802,20 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 **Concepts:**
 - Superglobals: `$_SERVER` and `$_GET` with query strings
 - Sending a response: `header()`, `http_response_code()`, and redirects
+- Revisit the request path from Lecture 1 with real PHP: browser → HTTP → web server → PHP → response
+- Basic URL parts and a few common HTTP status codes
 **Content:**
 - Use the letter and envelope analogy
+- Briefly reconnect to Lecture 1: the same request/response story, now with code you can inspect
+- Say what an HTTP request carries at minimum: a method (`GET`), a path, and headers; what a response carries: a status code, headers, and a body
+- Map the Lecture 1 lifecycle onto what you can inspect: web server → PHP script → build response (HTML now; JSON appears in Lecture 27). Do not open a database here
 - Run `php -S localhost:8000` and inspect `$_SERVER['REQUEST_METHOD']` and `$_SERVER['REQUEST_URI']`
-- Show reading `?page=2` with `$_GET['page'] ?? 1`
-- Show setting a status code (404) and a `Location` redirect followed by `exit`
+- Show reading `?page=2` with `$_GET['page'] ?? 1` and note that query-string data is visible in the URL (users can change it)
+- Show common status codes in plain English: `200` OK, `301`/`302` redirect, `403` forbidden, `404` not found, `500` server error — then set a `404` and a `Location` redirect followed by `exit` in code
 - Explain the "headers already sent" error and why output must come after headers
 - Warn that every value from `$_GET` is untrusted text (validation comes in Lecture 23)
-- Show `parse_url()` on a full URL, and mention that the PHP 8.5 URI extension is object-based and is used after the PHP OOP repo
+- Show `parse_url()` on a full URL and name the main parts: scheme (`https`), host, path, query — mention that the PHP 8.5 URI extension is object-based and is used after the PHP OOP repo
+- Point students to the MDN HTTP and client–server pages in Official Sources when they want the web-standard view
 **PHP Manual Reference:** https://www.php.net/manual/en/language.variables.superglobals.php
 
 ---
@@ -796,7 +829,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Use the sealed envelope analogy
 - Show a form posting to the same file and checking `$_SERVER['REQUEST_METHOD'] === 'POST'`
 - Show reading fields with `$_POST['email'] ?? ''`
-- Explain when to use GET (reading, searching) vs POST (creating, changing)
+- Explain when to use GET (reading, searching) vs POST (creating, changing): GET puts data in the URL (bookmarkable, visible, not for secret or state-changing work); POST puts data in the request body
 - Show the duplicate-submit problem on refresh and fix it with Post/Redirect/Get
 - Show the alternative syntax for templates: `<?php if ($errors): ?> ... <?php endif; ?>` and `foreach: ... endforeach;`
 - Note that output is not escaped yet and say Lecture 23 fixes that
@@ -826,8 +859,10 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 **Concepts:**
 - Sessions: `session_start()`, `$_SESSION`, `session_regenerate_id()`, logout
 - Cookies: `setcookie()` with `httponly`, `secure`, and `samesite` options
+- HTTP itself is stateless: each request stands alone until cookies/sessions add continuity
 **Content:**
 - Use the coat check analogy
+- Open with why we need this: HTTP has no built-in memory between requests (MDN: stateless but not sessionless); cookies and sessions are how we add that memory
 - Show a visit counter stored in `$_SESSION`
 - Show a flash message stored in the session and removed after display
 - Show logging out: clear `$_SESSION`, delete the cookie, `session_destroy()`

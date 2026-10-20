@@ -34,4 +34,7 @@ After you can answer this question clearly and solve the practice task, mark the
 
 ## Source
 
-Sources: https://www.php.net/manual/en/tutorial.forms.php, https://www.php.net/manual/en/reserved.variables.post.php
+Sources:
+- https://www.php.net/manual/en/tutorial.forms.php
+- https://www.php.net/manual/en/reserved.variables.post.php
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview

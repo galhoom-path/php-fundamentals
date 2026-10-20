@@ -14,6 +14,7 @@ Whether you know where state is stored and what the user can change.
 
 ## A Strong Answer Should Cover
 
+- HTTP is stateless: the protocol itself does not remember the previous request, so apps need cookies/sessions for continuity.
 - A cookie is stored in the browser and sent with every request; the user can read and edit it.
 - A session stores data on the server; the browser keeps only a session ID cookie.
 - Sensitive data such as the logged-in user ID belongs in the session, never in a plain cookie.
@@ -34,4 +35,7 @@ After you can answer this question clearly and solve the practice task, mark the
 
 ## Source
 
-Sources: https://www.php.net/manual/en/book.session.php, https://www.php.net/manual/en/function.setcookie.php
+Sources:
+- https://www.php.net/manual/en/book.session.php
+- https://www.php.net/manual/en/function.setcookie.php
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview

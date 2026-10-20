@@ -110,7 +110,7 @@ Question 45 - How do you debug a PHP script that does not work as expected?
 ## Question Source Map
 
 ```
-Question 01 Source: https://www.php.net/manual/en/intro-whatis.php
+Question 01 Source: https://www.php.net/manual/en/introduction.php
 Question 02 Sources: https://www.php.net/manual/en/features.commandline.php, https://www.php.net/manual/en/features.commandline.webserver.php
 Question 03 Sources: https://www.php.net/manual/en/function.echo.php, https://www.php.net/manual/en/function.print.php
 Question 04 Source: https://www.php.net/manual/en/language.constants.php
