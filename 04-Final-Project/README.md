@@ -2,19 +2,20 @@
 name: php-fundamentals-final-project
 purpose: >
   This file has exactly one purpose: to guide one realistic final project that
-  proves the student understands the PHP Fundamentals lecture track and interview track.
+  proves the student understands the PHP Fundamentals lectures, interview
+  questions, and visual maps.
 scope: >
   This file should only contain the final project plan, milestones, validation
   checklist, folder conventions, and mentor rules for the PHP Fundamentals final project.
 description: >
   Structured final-project guide for building one real-world procedural PHP
-  web application after finishing the lectures and interview questions. Trigger
-  when the student says "start final project", "continue final project", or
-  "review my final project".
+  web application after finishing the lectures, interview questions, and visual
+  maps. Trigger when the student says "start final project", "continue final
+  project", or "review my final project".
 triggers:
   - user wants to start the PHP Fundamentals final project
   - user wants to continue the PHP Fundamentals final project
-  - user asks for project review after finishing lectures and interview questions
+  - user asks for project review after finishing lectures, interviews, and visual maps
 ---
 
 # PHP Fundamentals Final Project (PHP 8.5+) - BookIt Lite
@@ -30,7 +31,8 @@ The student writes all implementation code. The mentor may guide, review, debug,
 Start only after:
 1. All 30 lectures in `../01-Lectures/README.md` are completed.
 2. All 45 interview questions in `../02-Interview-Questions/README.md` are completed.
-3. The student explicitly says they are ready to start the final project.
+3. All 12 visual maps in `../03-Visual-Maps/README.md` are completed.
+4. The student explicitly says they are ready to start the final project.
 
 This project is the final proof step. It is not a lecture replacement.
 
@@ -136,7 +138,7 @@ The business wants to answer questions like:
 ## Required Folder Structure
 
 ```
-03-Final-Project/
+04-Final-Project/
   README.md                      // This guide
   public/                        // The only folder served by the web server
     index.php                    // Home page and booking form
@@ -488,6 +490,7 @@ Lecture 28 - Regular expressions
 Lecture 29 - End-to-end mini-project thinking
 Lecture 30 - Error reporting, logging, and assert()
 Interview Questions 01-45 - Explain every major design choice in interview form
+Visual Maps 01-12 - Draw the flows and the end-to-end system before building
 ```
 
 ---
@@ -542,7 +545,7 @@ Mark a milestone with ✅ only after the student can explain it and the code beh
 
 ## Source References
 
-This project is based on the same official learning sources used by the lecture and interview tracks.
+This project is based on the same official learning sources used by the lecture, interview, and visual-maps tracks.
 
 Sources:
 - https://www.php.net/manual/en/langref.php

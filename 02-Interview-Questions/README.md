@@ -53,7 +53,7 @@ This track stays inside core PHP. Do not ask OOP questions (classes, interfaces,
 - [ ] Weak questions were repeated until the student could answer clearly and confidently.
 ```
 
-Do not start `../03-Final-Project/README.md` until this checklist is complete.
+Do not start `../03-Visual-Maps/README.md` until this checklist is complete.
 
 ### Interview Question Progress
 

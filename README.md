@@ -13,7 +13,7 @@
 ![PHP](https://img.shields.io/badge/PHP-8.5%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Focus](https://img.shields.io/badge/Focus-PHP%20Fundamentals-2563EB?style=for-the-badge)
 ![Source](https://img.shields.io/badge/Source-Official%20PHP%20Manual-059669?style=for-the-badge)
-![Tracks](https://img.shields.io/badge/Tracks-3-D97706?style=for-the-badge)
+![Tracks](https://img.shields.io/badge/Tracks-4-D97706?style=for-the-badge)
 ![Progress](https://img.shields.io/badge/Lectures-0%2F30%20Done-2563EB?style=for-the-badge)
 ![Current](https://img.shields.io/badge/Current-Lecture%2001-F59E0B?style=for-the-badge)
 
@@ -24,7 +24,7 @@
 ║                                                                      ║
 ║   🐘  P H P   F U N D A M E N T A L S   D O C U M E N T A T I O N 📖  ║
 ║                                                                      ║
-║          Lectures  ──▶  Interview Prep  ──▶  Final Project          ║
+║   Lectures ──▶ Interviews ──▶ Visual Maps ──▶ Final Project         ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
@@ -34,12 +34,12 @@
 > 🎯 **This repo is for those who want to study the core PHP language from zero**
 > with **PHP 8.5+**. All lectures follow the
 > [**official PHP Manual**](https://www.php.net/manual/en/langref.php),
-> with interview questions and a final project to master it all.
+> with interview questions, visual maps, and a final project to master it all.
 > It is the **first link** in a series: **PHP Fundamentals → [PHP OOP](https://github.com/galhoom-path/php-oop) → OOD**.
 
 <br/>
 
-[📊 My Progress](#-my-progress) · [🚀 Get Started](#-how-to-start) · [📚 Lectures](#-track-1--lectures) · [💼 Interviews](#-track-2--interview-questions) · [🏗️ Project](#-track-3--final-project)
+[📊 My Progress](#-my-progress) · [🚀 Get Started](#-how-to-start) · [📚 Lectures](#-track-1--lectures) · [💼 Interviews](#-track-2--interview-questions) · [🗺️ Visual Maps](#-track-3--visual-maps) · [🏗️ Project](#-track-4--final-project)
 
 </div>
 
@@ -56,10 +56,11 @@
 | 📊 | [My Progress](#-my-progress) | Status, lecture list, milestones |
 | 🎯 | [Purpose](#-purpose) | Why this book exists |
 | 👤 | [Who This Is For](#-who-this-is-for) | Is this for you? |
-| 🗺️ | [Learning Path](#-learning-path) | Lectures → Interviews → Project |
+| 🗺️ | [Learning Path](#-learning-path) | Lectures → Interviews → Visual Maps → Project |
 | 📚 | [Track 1 — Lectures](#-track-1--lectures) | 30 sessions in 3 parts |
 | 💼 | [Track 2 — Interviews](#-track-2--interview-questions) | 45 questions |
-| 🏗️ | [Track 3 — Final Project](#-track-3--final-project) | BookIt Lite |
+| 🗺️ | [Track 3 — Visual Maps](#-track-3--visual-maps) | 12 diagrams |
+| 🏗️ | [Track 4 — Final Project](#-track-4--final-project) | BookIt Lite |
 | 🚀 | [How to Start](#-how-to-start) | Your first step |
 | 📁 | [Repository Structure](#-repository-structure) | Folder map |
 | ⚙️ | [Requirements](#-requirements) | What you need |
@@ -84,7 +85,8 @@
 |:---|:---:|:---|
 | 📚 **Lectures** | **0 / 30** | 🟡 In Progress — *Lecture 01 next* |
 | 💼 **Interview Questions** | **0 / 45** | 🔒 Locked — *starts after Lecture 30* |
-| 🏗️ **Final Project** | **0 / 13 milestones** | 🔒 Locked — *starts after interviews* |
+| 🗺️ **Visual Maps** | **0 / 12** | 🔒 Locked — *starts after interviews* |
+| 🏗️ **Final Project** | **0 / 13 milestones** | 🔒 Locked — *starts after visual maps* |
 
 <br/>
 
@@ -296,7 +298,7 @@ PHP powers a large part of the web — from WordPress and Laravel to custom APIs
         │                                                      │
         │   📚  TRACK 1          💼  TRACK 2        🏗️  TRACK 3   │
         │   ──────────          ──────────        ──────────   │
-        │   30 Lectures    ──▶  45 Questions  ──▶  Final Project │
+        │  30 Lectures ──▶ 45 Questions ──▶ 12 Maps ──▶ Project │
         │   Official Docs       Interview Ready   BookIt Lite    │
         │                                                      │
         ╰──────────────────────────────────────────────────────╯
@@ -410,13 +412,39 @@ Part-3-Web-PHP/       →  Lectures 21–30
 
 <br/>
 
-## 🏗️ Track 3 — Final Project
+## 🗺️ Track 3 — Visual Maps
 
 <br/>
 
 | | |
 |:---|:---|
-| 📂 **Track folder** | [`03-Final-Project/`](03-Final-Project/) — guide + workspace |
+| 📂 **Track folder** | [`03-Visual-Maps/`](03-Visual-Maps/) — guide + workspace |
+| 🔢 **Maps** | **12 diagrams** — Mermaid-first, one idea each |
+| 🎯 **Goal** | See PHP as flows, sequences, and one system map before building |
+
+<br/>
+
+> 💡 Start this track **only after** completing all 45 interview questions.
+
+<br/>
+
+| Progress | Status |
+|:---:|:---|
+| **0 / 12** | 🔒 Not started yet |
+
+<br/>
+
+---
+
+<br/>
+
+## 🏗️ Track 4 — Final Project
+
+<br/>
+
+| | |
+|:---|:---|
+| 📂 **Track folder** | [`04-Final-Project/`](04-Final-Project/) — guide + workspace |
 | 🎯 **Project** | **BookIt Lite** — appointment booking for a small business |
 | 🛠️ **Stack** | Pure procedural PHP · No framework · No database · JSON file storage |
 
@@ -459,8 +487,9 @@ Part-3-Web-PHP/       →  Lectures 21–30
 | **1️⃣** | 📖 Open the lecture guide and start **Lecture 01** | [`01-Lectures/`](01-Lectures/) → [`Lecture-01-why-php/`](01-Lectures/Part-1-Foundations/Lecture-01-why-php/) |
 | **2️⃣** | ✍️ Type each example into that lecture’s `code-N.php` files — one session at a time | Lecture folder |
 | **3️⃣** | 💼 After all 30 lectures, practice interview answers | [`02-Interview-Questions/`](02-Interview-Questions/) |
-| **4️⃣** | 🏗️ Build the capstone when interviews are done | [`03-Final-Project/`](03-Final-Project/) |
-| **5️⃣** | ➡️ Continue the series with [PHP OOP](https://github.com/galhoom-path/php-oop) | Next repository |
+| **4️⃣** | 🗺️ Draw the flows and the system map | [`03-Visual-Maps/`](03-Visual-Maps/) |
+| **5️⃣** | 🏗️ Build the capstone when visual maps are done | [`04-Final-Project/`](04-Final-Project/) |
+| **6️⃣** | ➡️ Continue the series with [PHP OOP](https://github.com/galhoom-path/php-oop) | Next repository |
 
 <br/>
 
@@ -502,7 +531,12 @@ Part-3-Web-PHP/       →  Lectures 21–30
 │   ├── Question-01-what-is-php-and-how-it-runs/
 │   └── ...
 │
-└── 📂  03-Final-Project/                      ← 🏆 Track 3 · BookIt Lite
+├── 📂  03-Visual-Maps/                        ← 🗺️ Track 3 · 12 diagrams
+│   ├── README.md
+│   ├── Map-01-static-vs-dynamic-pages/
+│   └── ...
+│
+└── 📂  04-Final-Project/                      ← 🏆 Track 4 · BookIt Lite
     ├── README.md
     ├── public/                                ←    (student-created)
     ├── src/                                   ←    (student-created)
@@ -598,7 +632,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 ```
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                              ║
-║   📘  Read.  ✍️  Write.  💬  Explain.  🏗️  Build.  🏅  Master.  ║
+║   📘  Read.  ✍️  Write.  💬  Explain.  🗺️  Map.  🏗️  Build.  🏅  Master.  ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
 ```

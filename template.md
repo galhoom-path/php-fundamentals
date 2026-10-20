@@ -1,4 +1,4 @@
-# Study Repository Template — Lectures → Interview Questions → Final Project
+# Study Repository Template — Lectures → Interview Questions → Visual Maps → Final Project
 
 > A reusable blueprint for building a complete, source-backed study repository for **any subject**
 > (PHP, Design Patterns, OOP, SQL, Docker, Laravel, System Design, English grammar, Accounting, ...).
@@ -6,8 +6,8 @@
 > Every repository built from this template has the **same structure, the same files, the same rules,
 > and the same learning method**. Only the subject-specific content changes.
 >
-> **Template last synced with the repository:** 2026-10-15
-> This file must always mirror the repository. See [Section 18](#18-template-sync-rule-keep-this-file-a-mirror).
+> **Template last synced with the repository:** 2026-10-21
+> This file must always mirror the repository. See [Section 19](#19-template-sync-rule-keep-this-file-a-mirror).
 
 ---
 
@@ -25,12 +25,13 @@
 10. [File Template — Lecture Folder Files](#10-file-template--lecture-folder-files)
 11. [File Template — `02-Interview-Questions/README.md`](#11-file-template--02-interview-questionsreadmemd)
 12. [File Template — Question Folder `README.md`](#12-file-template--question-folder-readmemd)
-13. [File Template — `03-Final-Project/README.md`](#13-file-template--03-final-projectreadmemd)
-14. [Adapting to Non-Technical Subjects](#14-adapting-to-non-technical-subjects)
-15. [Progress Update Protocol](#15-progress-update-protocol)
-16. [Repository Creation Checklist](#16-repository-creation-checklist)
-17. [Ready-to-Paste AI Prompt (Generate a New Repo)](#17-ready-to-paste-ai-prompt-generate-a-new-repo)
-18. [Template Sync Rule (Keep This File a Mirror)](#18-template-sync-rule-keep-this-file-a-mirror)
+13. [File Template — `03-Visual-Maps/README.md`](#13-file-template--03-visual-mapsreadmemd)
+14. [File Template — `04-Final-Project/README.md`](#14-file-template--04-final-projectreadmemd)
+15. [Adapting to Non-Technical Subjects](#15-adapting-to-non-technical-subjects)
+16. [Progress Update Protocol](#16-progress-update-protocol)
+17. [Repository Creation Checklist](#17-repository-creation-checklist)
+18. [Ready-to-Paste AI Prompt (Generate a New Repo)](#18-ready-to-paste-ai-prompt-generate-a-new-repo)
+19. [Template Sync Rule (Keep This File a Mirror)](#19-template-sync-rule-keep-this-file-a-mirror)
 
 ---
 
@@ -43,7 +44,7 @@
    Pick the **latest stable version** and the **official sources** before writing anything.
 5. Design the curriculum using the sizing rules in [Section 5](#5-sizing-rules-how-many-lectures-questions-milestones).
 6. Generate the scaffold exactly as described in [Section 6](#6-repository-structure)
-   using the file templates in Sections 8–13.
+   using the file templates in Sections 8–14.
 7. Run the [Repository Creation Checklist](#16-repository-creation-checklist).
 8. Start studying from Lecture 01. Never skip the track order.
 
@@ -59,7 +60,8 @@ together with this file, and it will generate the full scaffold for you.
 | Lecture folders with empty `code-1`…`code-6` stubs and a `review-7.md` stub (see [Section 10.4](#104-lecture-scaffold-stubs)) | Every `Milestone/` solution |
 | `02-Interview-Questions/README.md` | Every question's `code-N.<ext>` and `notes.md` |
 | One `README.md` inside every question folder | All final-project source files, tests, `notes.md` |
-| `03-Final-Project/README.md` | Progress check marks (✅) after passing each CHECK |
+| `03-Visual-Maps/README.md` + each map's `README.md` + empty `map.md` | Filled `map.md` diagrams and optional `notes.md` |
+| `04-Final-Project/README.md` | Progress check marks (✅) after passing each CHECK |
 
 > **Golden rule:** the guides teach; the learner writes. The tutor/AI shows examples in chat
 > and never writes the learner's practice files.
@@ -105,6 +107,7 @@ After generating a repo, a search for `{{` outside `template.md` must return no 
 | `{{SUBJECT_URL_ENCODED}}` / `{{SUBJECT_VERSION_URL_ENCODED}}` | Values encoded for shields.io badges: space → `%20`, `+` → `%2B`, `/` → `%2F`, `-` → `--`. The version badge uses the **version number only**, because the badge label already shows `{{LANGUAGE_OR_TOOL}}` | `PHP%20OOP` / `8.5%2B` |
 | `{{SPACED UPPERCASE SUBJECT}}` | Subject in spaced capitals for the ASCII banner | `P H P   O O P` |
 | `{{QUESTION_COUNT}}` | Total interview questions | `42` |
+| `{{MAP_COUNT}}` | Total visual maps (about 0.3–0.5 × lecture count) | `12` |
 | `{{PROJECT_NAME}}` | Final project name | `SupportDesk Lite` |
 | `{{PROJECT_MILESTONE_COUNT}}` | Final project milestones (from 00) | `15` (00–14) |
 | `{{OUT_OF_SCOPE}}` | Topics explicitly excluded (they belong to another repo) | `Design patterns, SOLID` |
@@ -118,9 +121,9 @@ After generating a repo, a search for `{{` outside `template.md` must return no 
 
 These principles are copied into every repository and never change between subjects.
 
-1. **Three tracks, strict order:** Lectures → Interview Questions → Final Project.
+1. **Four tracks, strict order:** Lectures → Interview Questions → Visual Maps → Final Project.
    A track starts only after the previous track's Review Checklist is fully checked.
-2. **One unit per session:** one lecture, one question, or one project milestone per session,
+2. **One unit per session:** one lecture, one question, one visual map, or one project milestone per session,
    unless the learner explicitly asks to continue.
 3. **Iterative cycle (PLAN → DO → CHECK → ACT)** runs for every unit.
 4. **3-Phase Lecture Method:** Before (scope and skim) → During (analogy first, then examples) → After (study card).
@@ -129,7 +132,7 @@ These principles are copied into every repository and never change between subje
 7. **Every line of every example is annotated.** Zero uncommented lines.
 8. **The learner writes everything by hand.** The tutor only shows, explains, reviews, and debugs.
 9. **Official sources only, latest stable version** (see [Section 4](#4-source-and-freshness-rules-mandatory)).
-   Every review card, question, and project ends with its source.
+   Every review card, question, visual map, and project ends with its source.
 10. **Milestones** check real understanding at fixed points (about 1/6, 1/2, 3/4, and the end of the lectures).
 11. **No progress without proof:** a ✅ is added only after the learner passes the CHECK task.
 12. **Plain language:** every technical term gets a one-line plain-language definition on first use.
@@ -181,7 +184,8 @@ Not allowed as the only source: random blog posts, unverified tutorials, AI-gene
 | `review-N.md` | `## Official reference` + `[Source — Short Label](url)` | **Always the last section** |
 | Question folder `README.md` | `Source: <url>` or `Sources: <url>, <url>` | **Always the last line** |
 | `02-Interview-Questions/README.md` | Question Source Map block | Dedicated section |
-| `03-Final-Project/README.md` | `## Source References` list | Last section |
+| `03-Visual-Maps/` map folder `README.md` | `Source:` / `Sources:` | **Always the last line** |
+| `04-Final-Project/README.md` | `## Source References` list | Last section |
 | Root `README.md` | `## 🔗 Official Sources` table | Before the footer |
 
 - Use deep links to the exact page or section, not only the homepage.
@@ -210,11 +214,11 @@ Run this every time a new stable version of `{{SUBJECT}}` is released. The repo 
 
 Scale the repository to the subject. These are the default rules.
 
-| Subject size | Example | Lectures | Parts | Questions | Project milestones |
-|:---|:---|:---:|:---:|:---:|:---:|
-| Small | Git basics, Regex | 10–15 | 2 | 15–20 | 6–8 |
-| Medium | Docker, SQL, Design Patterns | 16–25 | 3 | 25–35 | 10–12 |
-| Large | PHP OOP, Laravel, React | 26–35 | 3–4 | 35–50 | 12–15 |
+| Subject size | Example | Lectures | Parts | Questions | Visual maps | Project milestones |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|
+| Small | Git basics, Regex | 10–15 | 2 | 15–20 | 4–8 | 6–8 |
+| Medium | Docker, SQL, Design Patterns | 16–25 | 3 | 25–35 | 6–12 | 10–12 |
+| Large | PHP OOP, Laravel, React | 26–35 | 3–4 | 35–50 | 10–15 | 12–15 |
 
 Rules:
 
@@ -227,6 +231,7 @@ Rules:
 - **The second-to-last lecture** is always a **mini-project** that combines everything learned.
 - **The last lecture** is always a **milestone** focused on verification (testing, assessment, or real practice).
 - **Interview questions:** about **1.3–1.5 × the lecture count**. Every lecture maps to at least one question.
+- **Visual maps:** about **0.3–0.5 × the lecture count**. The last map is always an end-to-end system map.
 - **Final project milestones:** start at `Milestone 00 - Project Setup` and end with `Final Review`.
   Each project milestone covers 2–4 lectures, so together they cover every lecture.
 
@@ -240,7 +245,7 @@ Rules:
 ├── README.md                                   ← Repo overview · progress dashboard · start here
 ├── template.md                                 ← This file (keep it: Sections 15 and 17 are used while studying)
 ├── .gitignore                                  ← Only if the subject installs dependencies
-├── .cursor/rules/template-sync.mdc             ← Enforces Section 18 automatically (always applied)
+├── .cursor/rules/template-sync.mdc             ← Enforces Section 19 automatically (always applied)
 │
 ├── 01-Lectures/                                ← Track 1 · guide + workspace
 │   ├── README.md                               ← Tutor skill: curriculum, method, rules, outlines
@@ -270,7 +275,15 @@ Rules:
 │   │   └── notes.md                            ← Learner's final interview answer
 │   └── ...
 │
-└── 03-Final-Project/                           ← Track 3 · guide + workspace
+├── 03-Visual-Maps/                             ← Track 3 · guide + workspace
+│   ├── README.md                               ← Visual skill: map list, standards, rules
+│   ├── Map-01-{{map-slug}}/
+│   │   ├── README.md                           ← Scaffolded prompt + CHECK + Source
+│   │   ├── map.md                              ← Mermaid stub (learner fills)
+│   │   └── notes.md                            ← Optional learner reflection
+│   └── ...
+│
+└── 04-Final-Project/                           ← Track 4 · guide + workspace
     ├── README.md                               ← Project guide: scenario, milestones, rules
     ├── src/                                    ← Learner-created gradually
     ├── tests/                                  ← Learner-created gradually
@@ -280,11 +293,12 @@ Rules:
 
 What exists **at scaffold time** (before studying starts):
 
-- `README.md` (root), `01-Lectures/README.md`, `02-Interview-Questions/README.md`, `03-Final-Project/README.md`.
+- `README.md` (root), `01-Lectures/README.md`, `02-Interview-Questions/README.md`, `03-Visual-Maps/README.md`, `04-Final-Project/README.md`.
 - Every `Part-N-*/Lecture-NN-*/` folder, each containing empty `code-1` … `code-6` files and a
   `review-7.md` stub as described in [Section 10.4](#104-lecture-scaffold-stubs).
 - Every `Question-NN-*/README.md`.
-- `.cursor/rules/template-sync.mdc` — copied as-is from [Section 18](#18-template-sync-rule-keep-this-file-a-mirror).
+- Every `Map-NN-*/README.md` plus empty `map.md` stub.
+- `.cursor/rules/template-sync.mdc` — copied as-is from [Section 19](#19-template-sync-rule-keep-this-file-a-mirror).
 - `.gitignore` only when the subject uses a package manager or produces build output.
   List the dependency and build folders only (for example `vendor/`, `node_modules/`, `__pycache__/`, `.venv/`, `bin/`, `obj/`)
   plus local secrets (`.env`). Never ignore learner files.
@@ -337,7 +351,8 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 6. 🗺️ Learning Path.
 7. 📚 Track 1 — Lectures.
 8. 💼 Track 2 — Interview Questions.
-9. 🏗️ Track 3 — Final Project.
+9. 🗺️ Track 3 — Visual Maps.
+10. 🏗️ Track 4 — Final Project.
 10. 🚀 How to Start.
 11. 📁 Repository Structure.
 12. ⚙️ Requirements.
@@ -359,7 +374,7 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 ![Version](https://img.shields.io/badge/{{LANGUAGE_OR_TOOL}}-{{SUBJECT_VERSION_URL_ENCODED}}-2563EB?style=for-the-badge)
 ![Focus](https://img.shields.io/badge/Focus-{{SUBJECT_URL_ENCODED}}-2563EB?style=for-the-badge)
 ![Source](https://img.shields.io/badge/Source-Official%20Docs-059669?style=for-the-badge)
-![Tracks](https://img.shields.io/badge/Tracks-3-D97706?style=for-the-badge)
+![Tracks](https://img.shields.io/badge/Tracks-4-D97706?style=for-the-badge)
 ![Progress](https://img.shields.io/badge/Lectures-0%2F{{LECTURE_COUNT}}%20Done-2563EB?style=for-the-badge)
 ![Current](https://img.shields.io/badge/Current-Lecture%2001-F59E0B?style=for-the-badge)
 
@@ -370,7 +385,7 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 ║                                                                      ║
 ║     {{SUBJECT_EMOJI}}  {{SPACED UPPERCASE SUBJECT}}   D O C U M E N T A T I O N  📖      ║
 ║                                                                      ║
-║          Lectures  ──▶  Interview Prep  ──▶  Final Project          ║
+║   Lectures ──▶ Interviews ──▶ Visual Maps ──▶ Final Project      ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
@@ -384,7 +399,7 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 
 <br/>
 
-[📊 My Progress](#-my-progress) · [🚀 Get Started](#-how-to-start) · [📚 Lectures](#-track-1--lectures) · [💼 Interviews](#-track-2--interview-questions) · [🏗️ Project](#-track-3--final-project)
+[📊 My Progress](#-my-progress) · [🚀 Get Started](#-how-to-start) · [📚 Lectures](#-track-1--lectures) · [💼 Interviews](#-track-2--interview-questions) · [🗺️ Visual Maps](#-track-3--visual-maps) · [🏗️ Project](#-track-4--final-project)
 
 </div>
 
@@ -397,10 +412,11 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 | 📊 | [My Progress](#-my-progress) | Status, lecture list, milestones |
 | 🎯 | [Purpose](#-purpose) | Why this book exists |
 | 👤 | [Who This Is For](#-who-this-is-for) | Is this for you? |
-| 🗺️ | [Learning Path](#-learning-path) | Lectures → Interviews → Project |
+| 🗺️ | [Learning Path](#-learning-path) | Lectures → Interviews → Visual Maps → Project |
 | 📚 | [Track 1 — Lectures](#-track-1--lectures) | {{LECTURE_COUNT}} sessions in {{PART_COUNT}} parts |
 | 💼 | [Track 2 — Interviews](#-track-2--interview-questions) | {{QUESTION_COUNT}} questions |
-| 🏗️ | [Track 3 — Final Project](#-track-3--final-project) | {{PROJECT_NAME}} |
+| 🗺️ | [Track 3 — Visual Maps](#-track-3--visual-maps) | {{MAP_COUNT}} diagrams |
+| 🏗️ | [Track 4 — Final Project](#-track-4--final-project) | {{PROJECT_NAME}} |
 | 🚀 | [How to Start](#-how-to-start) | Your first step |
 | 📁 | [Repository Structure](#-repository-structure) | Folder map |
 | ⚙️ | [Requirements](#-requirements) | What you need |
@@ -417,7 +433,8 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 |:---|:---:|:---|
 | 📚 **Lectures** | **0 / {{LECTURE_COUNT}}** | 🟡 In Progress — *Lecture 01 next* |
 | 💼 **Interview Questions** | **0 / {{QUESTION_COUNT}}** | 🔒 Locked — *starts after Lecture {{LECTURE_COUNT}}* |
-| 🏗️ **Final Project** | **0 / {{PROJECT_MILESTONE_COUNT}} milestones** | 🔒 Locked — *starts after interviews* |
+| 🗺️ **Visual Maps** | **0 / {{MAP_COUNT}}** | 🔒 Locked — *starts after interviews* |
+| 🏗️ **Final Project** | **0 / {{PROJECT_MILESTONE_COUNT}} milestones** | 🔒 Locked — *starts after visual maps* |
 
 <div align="center">
 
@@ -497,8 +514,8 @@ It is the only file that uses decorative emojis and ASCII boxes. Other files use
 
 ```
    📚 TRACK 1              💼 TRACK 2            🏗️ TRACK 3
-   {{LECTURE_COUNT}} Lectures   ──▶  {{QUESTION_COUNT}} Questions  ──▶  Final Project
-   Official Docs            Interview Ready       {{PROJECT_NAME}}
+   {{LECTURE_COUNT}} Lectures ──▶ {{QUESTION_COUNT}} Questions ──▶ {{MAP_COUNT}} Maps ──▶ Final Project
+   Official Docs         Interview Ready        See the system       {{PROJECT_NAME}}
                                    │
                                    ▼
                        🏅 {{SUBJECT}} Mastery Achieved
@@ -569,11 +586,27 @@ Part-3-{{PART_3_NAME}}/   →  Lectures NN–{{LECTURE_COUNT}}
 
 ---
 
-## 🏗️ Track 3 — Final Project
+## 🗺️ Track 3 — Visual Maps
 
 | | |
 |:---|:---|
-| 📂 **Track folder** | [`03-Final-Project/`](03-Final-Project/) — guide + workspace |
+| 📂 **Track folder** | [`03-Visual-Maps/`](03-Visual-Maps/) — guide + workspace |
+| 🔢 **Maps** | **{{MAP_COUNT}} diagrams** — Mermaid-first, one idea each |
+| 🎯 **Goal** | See the subject as flows, sequences, and one system map before building |
+
+> 💡 Start this track **only after** completing all {{QUESTION_COUNT}} interview questions.
+
+| Progress | Status |
+|:---:|:---|
+| **0 / {{MAP_COUNT}}** | 🔒 Not started yet |
+
+---
+
+## 🏗️ Track 4 — Final Project
+
+| | |
+|:---|:---|
+| 📂 **Track folder** | [`04-Final-Project/`](04-Final-Project/) — guide + workspace |
 | 🎯 **Project** | **{{PROJECT_NAME}}** — {{one-line description}} |
 | 🛠️ **Stack** | {{stack and constraints}} |
 
@@ -598,7 +631,8 @@ Part-3-{{PART_3_NAME}}/   →  Lectures NN–{{LECTURE_COUNT}}
 | **1️⃣** | 📖 Open the lecture guide and start **Lecture 01** | [`01-Lectures/`](01-Lectures/) |
 | **2️⃣** | ✍️ Type each example into that lecture’s `code-N.{{FILE_EXT}}` files — one session at a time | Lecture folder |
 | **3️⃣** | 💼 After all lectures, practice interview answers | [`02-Interview-Questions/`](02-Interview-Questions/) |
-| **4️⃣** | 🏗️ Build the capstone when interviews are done | [`03-Final-Project/`](03-Final-Project/) |
+| **4️⃣** | 🗺️ Draw the flows and the system map | [`03-Visual-Maps/`](03-Visual-Maps/) |
+| **5️⃣** | 🏗️ Build the capstone when visual maps are done | [`04-Final-Project/`](04-Final-Project/) |
 | **5️⃣** | ➡️ Continue the series with [{{NEXT_REPO}}]({{NEXT_REPO_URL}}) | Next repository |
 
 <!-- Drop step 5 when {{NEXT_REPO}} is None. -->
@@ -940,10 +974,11 @@ This is a deliberate learning rule, not a limitation. The tutor teaches by showi
 README.md                           // Repo overview — start here
 01-Lectures/                        // Track 1 · guide + workspace
 02-Interview-Questions/             // Track 2 · guide + workspace
-03-Final-Project/                   // Track 3 · guide + workspace
+03-Visual-Maps/                     // Track 3 · guide + workspace
+04-Final-Project/                   // Track 4 · guide + workspace
 ```
 
-Use **numeric prefixes** (`01-`, `02-`, `03-`) so GitHub lists tracks in learning-path order.
+Use **numeric prefixes** (`01-`, `02-`, `03-`, `04-`) so GitHub lists tracks in learning-path order.
 
 ### Folder structure
 
@@ -1296,7 +1331,7 @@ This track stays inside {{SUBJECT}}. Do not teach {{OUT_OF_SCOPE}} here.
 - [ ] Weak questions were repeated until the student could answer clearly and confidently.
 ```
 
-Do not start `../03-Final-Project/README.md` until this checklist is complete.
+Do not start `../03-Visual-Maps/README.md` until this checklist is complete.
 
 ### Interview Question Progress
 
@@ -1460,10 +1495,229 @@ Source: {{deep link}}
 
 ---
 
-## 13. File Template — `03-Final-Project/README.md`
+## 13. File Template — `03-Visual-Maps/README.md`
+
+The **visual synthesis** track. After the learner can explain the subject in words (interviews),
+they prove they can **see** it: flows, sequences, layers, and one end-to-end system map.
+Diagrams use **Mermaid inside Markdown** by default (git-friendly, no proprietary tools).
+
+### How to design the maps
+
+- Cover the subject's core mental models — not a UML course.
+- About **0.3–0.5 × lecture count** maps (Section 5). Every major part of the curriculum appears at least once.
+- Mix map kinds as needed: concept map, flowchart, sequence, state, layers/placement, compare, end-to-end system.
+- The **last map** is always the end-to-end system map. Completing it unlocks the final project.
+- Each map folder ships with a scaffolded `README.md` and an empty `map.md` stub (Mermaid fences ready to fill).
+- The learner draws; the tutor reviews. Do not pre-draw the answers in the scaffold.
+
+### Required sections in `03-Visual-Maps/README.md` (in this exact order)
+
+1. YAML front matter.
+2. `# {{SUBJECT}} Visual Maps ({{SUBJECT_VERSION}}) - See the System`
+3. `## Who This Is For`
+4. `## Visual Maps Track ({{MAP_COUNT}} Maps, One Per Session)` — rules + Review Checklist + Progress list.
+5. `## Map Kind Guide` — short plain-language list of allowed diagram kinds.
+6. `## Visual Map Session Cycle` — PLAN / DO / CHECK / ACT.
+7. `## Diagram Standards` — Mermaid-first, plain labels, one idea per map.
+8. `## Source Reference Rules`
+9. `## Visual Maps Folder Structure`
+10. `## Map Folder Rules`
+11. `## What Not To Do`
+
+### Template — track README
+
+````markdown
+---
+name: {{SUBJECT_SLUG}}-visual-maps
+purpose: >
+  This file has exactly one purpose: to guide visual synthesis of {{SUBJECT}}
+  after lectures and interview questions, before the final project.
+scope: >
+  This file should only contain map prompts, diagram standards, progress, and
+  folder conventions for {{SUBJECT}} visual maps. It is not a drawing-tools course.
+description: >
+  Structured visual-maps track for {{SUBJECT}}. Trigger when the student says
+  "next visual map", "draw the system", or "start visual maps".
+triggers:
+  - user wants {{SUBJECT}} visual maps or diagrams
+  - user says "next visual map" or "draw the flow"
+  - user is between interview questions and the final project
+---
+
+# {{SUBJECT}} Visual Maps ({{SUBJECT_VERSION}}) - See the System
+
+## Who This Is For
+
+Student profile: finished the {{SUBJECT}} lecture track and the interview-questions track.
+Ready to turn verbal understanding into clear diagrams before building the final project.
+
+---
+
+## Visual Maps Track ({{MAP_COUNT}} Maps, One Per Session)
+
+Start this track only after the Interview Track Review Checklist in `../02-Interview-Questions/README.md` is complete. Deliver exactly one map per session unless the student explicitly asks to continue.
+
+Every map session:
+- Restate what concept or flow the map must show.
+- Choose the simplest diagram kind that fits (see Map Kind Guide).
+- The student draws in `map.md` (Mermaid by default).
+- Ask one CHECK: the student explains the diagram out loud without reading labels one by one.
+- Mark the map with ✅ only after the diagram is accurate and the CHECK passes.
+- Keep a `Source:` line on every map folder `README.md`.
+
+This track stays inside {{SUBJECT}}. Do not teach {{OUT_OF_SCOPE}} here.
+
+### Visual Maps Review Checklist
+
+```
+- [ ] Every map from 1 to {{MAP_COUNT}} is marked with ✅ in the progress list.
+- [ ] Every map folder has `README.md` and a completed `map.md`.
+- [ ] Every map folder `README.md` ends with a `Source:` or `Sources:` line.
+- [ ] The final map is an end-to-end system view of {{SUBJECT}}.
+- [ ] The student can explain each map in plain English without reading every label.
+- [ ] Weak maps were redrawn until the CHECK passed.
+```
+
+Do not start `../04-Final-Project/README.md` until this checklist is complete.
+
+### Visual Map Progress
+
+```
+Map 01 - {{Map title}}
+Map 02 - {{Map title}}
+...
+Map {{MAP_COUNT}} - End-to-end system map
+```
+
+---
+
+## Map Kind Guide
+
+| Kind | Use when |
+|:---|:---|
+| Concept map | Ideas connect to each other |
+| Flowchart | A process has ordered steps and decisions |
+| Sequence | Actors exchange steps over time |
+| State | One thing changes status |
+| Layers / placement | Show where pieces live relative to each other |
+| Compare | Two options side by side |
+| System map | The whole subject in one picture (always last) |
+
+---
+
+## Visual Map Session Cycle
+
+### PLAN
+- Name the map and the single idea it must communicate.
+- Pick one diagram kind from the Map Kind Guide.
+
+### DO
+- Student drafts the Mermaid diagram in `map.md`.
+- Tutor reviews accuracy and simplicity (one idea, clear labels).
+
+### CHECK
+- Student explains the diagram aloud as if at a whiteboard.
+- One targeted fix if a relationship or order is wrong.
+
+### ACT
+- Mark ✅, update progress (Section 16), move to the next map.
+
+---
+
+## Diagram Standards
+
+- Default format: Mermaid fenced blocks inside `map.md`.
+- Prefer clear names over clever abbreviations.
+- One primary idea per map. Split if the diagram needs a legend longer than the diagram.
+- No pre-drawn answer keys in the scaffold.
+
+---
+
+## Source Reference Rules
+
+Every map folder `README.md` ends with `Source:` or `Sources:` pointing at the official docs (or lecture outline) that justify the map.
+
+---
+
+## Visual Maps Folder Structure
+
+```
+03-Visual-Maps/
+├── README.md
+├── Map-01-{{slug}}/
+│   ├── README.md
+│   ├── map.md
+│   └── notes.md          ← optional, learner-created
+└── ...
+```
+
+---
+
+## Map Folder Rules
+
+- `README.md` is scaffolded (prompt, kind, CHECK, Source).
+- `map.md` is scaffolded empty with a Mermaid stub the learner fills.
+- `notes.md` is optional and learner-created.
+
+---
+
+## What Not To Do
+
+- Do not start this track before interview questions are complete.
+- Do not require Lucidchart, draw.io, or paid tools.
+- Do not teach a full UML syllabus — only the map kinds needed for {{SUBJECT}}.
+- Do not unlock the final project before the end-to-end system map CHECK passes.
+- Do not draw the learner's diagrams for them.
+````
+
+### Template — map folder `README.md`
+
+````markdown
+# Map {{NN}} - {{Map title}}
+
+Status: Not completed
+Related lectures: Lecture {{N}}, Lecture {{M}}
+Folder: `03-Visual-Maps/Map-{{NN}}-{{slug}}/`
+Diagram kind: {{flowchart | sequence | concept map | state | layers | compare | system}}
+
+## What To Show
+
+{{One paragraph: the single idea this map must communicate.}}
+
+## CHECK
+
+Explain the diagram out loud in under two minutes without reading every label.
+
+## Files
+
+- `map.md` — your Mermaid (or ASCII) diagram.
+- `notes.md` — optional short reflection.
+
+## Completion Rule
+
+After the diagram is accurate and you pass the CHECK, mark this map with ✅ in `../README.md`.
+
+## Source
+
+Source: {{deep link or lecture outline reference}}
+````
+
+### Template — `map.md` stub
+
+````markdown
+# {{Map title}}
+
+```mermaid
+%% Draft your diagram here.
+```
+````
+
+---
+
+## 14. File Template — `04-Final-Project/README.md`
 
 The **capstone guide**. It describes one realistic, intentionally small project that proves mastery of
-every lecture and every interview question. The learner writes all project code.
+every lecture, every interview question, and the visual maps. The learner writes all project code.
 
 ### How to design the project
 
@@ -1476,7 +1730,7 @@ every lecture and every interview question. The learner writes all project code.
   Each milestone maps to 2–4 lectures, in lecture order.
 - Every milestone has: **Goal**, **The student must create**, **Required concepts**,
   **Behavior to implement**, and a **Completion check**.
-- End with a **Concept Coverage Checklist** listing every lecture plus the interview track.
+- End with a **Concept Coverage Checklist** listing every lecture, the interview track, and the visual-maps track.
 
 ### Required sections (in this exact order)
 
@@ -1510,12 +1764,12 @@ scope: >
   checklist, folder conventions, and mentor rules for the {{SUBJECT}} final project.
 description: >
   Structured final-project guide for building one real-world {{SUBJECT}} project
-  after finishing the lectures and interview questions. Trigger when the student
+  after finishing the lectures, interview questions, and visual maps. Trigger when the student
   says "start final project", "continue final project", or "review my final project".
 triggers:
   - user wants to start the {{SUBJECT}} final project
   - user wants to continue the {{SUBJECT}} final project
-  - user asks for project review after finishing lectures and interview questions
+  - user asks for project review after finishing lectures, interviews, and visual maps
 ---
 
 # {{SUBJECT}} Final Project ({{SUBJECT_VERSION}}) - {{PROJECT_NAME}}
@@ -1531,7 +1785,8 @@ The student writes all implementation code. The mentor may guide, review, debug,
 Start only after:
 1. All {{LECTURE_COUNT}} lectures in `../01-Lectures/README.md` are completed.
 2. All {{QUESTION_COUNT}} interview questions in `../02-Interview-Questions/README.md` are completed.
-3. The student explicitly says they are ready to start the final project.
+3. All {{MAP_COUNT}} visual maps in `../03-Visual-Maps/README.md` are completed.
+4. The student explicitly says they are ready to start the final project.
 
 This project is the final proof step. It is not a lecture replacement.
 
@@ -1609,7 +1864,7 @@ The business wants to answer questions like:
 ## Required Folder Structure
 
 ```
-03-Final-Project/
+04-Final-Project/
   README.md                      // This guide
   src/
     {{organized folders and files}}
@@ -1730,7 +1985,7 @@ Sources:
 
 ---
 
-## 14. Adapting to Non-Technical Subjects
+## 15. Adapting to Non-Technical Subjects
 
 The structure stays identical. Only the practice files and a few labels change.
 
@@ -1751,13 +2006,13 @@ The structure stays identical. Only the practice files and a few labels change.
 | `playground.{{FILE_EXT}}` | `deliverable/README.md` (entry point that explains the deliverable) |
 | `.gitignore` | Not needed |
 
-All other rules stay the same: three tracks in order, one unit per session, PLAN–DO–CHECK–ACT,
+All other rules stay the same: four tracks in order, one unit per session, PLAN–DO–CHECK–ACT,
 analogy first, maximum 2 new concepts per lecture, study card with an official reference at the end,
 and the learner writes everything.
 
 ---
 
-## 15. Progress Update Protocol
+## 16. Progress Update Protocol
 
 When a unit is completed (after the learner passes the CHECK), update **all** of these places:
 
@@ -1781,23 +2036,30 @@ When a unit is completed (after the learner passes the CHECK), update **all** of
 2. `02-Interview-Questions/README.md` → ✅ in the progress list.
 3. Root `README.md` → Overall Status and the Track 2 progress table.
 
+### After a visual map
+
+1. Map folder `README.md` → `Status: Completed`.
+2. `03-Visual-Maps/README.md` → ✅ in the progress list.
+3. Root `README.md` → Overall Status and the Track 3 progress table.
+
 ### After a final project milestone
 
-1. `03-Final-Project/README.md` → ✅ in the Progress block; update the status line.
-2. Root `README.md` → Overall Status and the Track 3 progress table.
+1. `04-Final-Project/README.md` → ✅ in the Progress block; update the status line.
+2. Root `README.md` → Overall Status and the Track 4 progress table.
 
 ### Suggested commit messages
 
 ```
 lecture: complete Lecture NN - {{topic}}
 interview: complete Question NN - {{slug}}
+visual: complete Map NN - {{slug}}
 project: complete Milestone NN - {{title}}
 docs: update progress dashboard
 ```
 
 ---
 
-## 16. Repository Creation Checklist
+## 17. Repository Creation Checklist
 
 Run this after generating a new repository from the template.
 
@@ -1811,13 +2073,14 @@ Sources and freshness
 - [ ] Root README has the Staying Current section with a Version History row for {{SUBJECT_VERSION}}.
 
 Structure
-- [ ] Root has exactly: README.md, template.md, .cursor/rules/template-sync.mdc, 01-Lectures/, 02-Interview-Questions/, 03-Final-Project/ (+ optional .gitignore).
+- [ ] Root has exactly: README.md, template.md, .cursor/rules/template-sync.mdc, 01-Lectures/, 02-Interview-Questions/, 03-Visual-Maps/, 04-Final-Project/ (+ optional .gitignore).
 - [ ] `template.md` has a `Template last synced` date at the top.
 - [ ] Every lecture folder exists with the correct `Lecture-NN-slug` name inside the correct part.
 - [ ] Every lecture folder contains empty `code-1` … `code-6` stubs and a `review-7.md` stub (Section 10.4).
 - [ ] Milestone lectures use `Lecture-NN-Milestone-slug` and match {{MILESTONE_LECTURES}}.
 - [ ] Every question folder exists with its README.md.
-- [ ] No learner content was pre-written (only the empty lecture stubs from Section 10.4 exist).
+- [ ] Every map folder exists with its README.md and empty `map.md` stub.
+- [ ] No learner content was pre-written (only the empty lecture stubs from Section 10.4 and empty map stubs exist).
 
 Content
 - [ ] Lecture 01 explains the problem, not the solution.
@@ -1827,12 +2090,13 @@ Content
 - [ ] Milestone checks are written for all 4 milestones.
 - [ ] Every lecture is covered by at least one interview question.
 - [ ] Every lecture appears in the final project's Concept Coverage Checklist.
+- [ ] Visual maps cover each major part; the last map is the end-to-end system map.
 - [ ] Out-of-scope topics are listed in every "What Not To Do" section.
 - [ ] No lecture or interview question repeats one from {{PREVIOUS_REPO}} or {{NEXT_REPO}}; overlapping topics point to the neighbor repo.
 - [ ] The first lecture starts where {{PREVIOUS_REPO}} stops, and the track covers everything {{NEXT_REPO}} assumes.
 
 Consistency
-- [ ] Counts match everywhere (lectures, questions, milestones) in all four README files.
+- [ ] Counts match everywhere (lectures, questions, maps, milestones) in all five README files.
 - [ ] All relative links in the root README resolve to real folders.
 - [ ] Progress dashboard starts at 0 with Lecture 01 marked as Next.
 - [ ] Part count matches {{PART_COUNT}} everywhere (no leftover Part-3 block in a 2-part repo, no missing Part-4 block).
@@ -1844,7 +2108,7 @@ Consistency
 
 ---
 
-## 17. Ready-to-Paste AI Prompt (Generate a New Repo)
+## 18. Ready-to-Paste AI Prompt (Generate a New Repo)
 
 Copy this prompt, fill in the first block, and give it to an AI assistant together with this `template.md`.
 
@@ -1876,17 +2140,19 @@ Rules:
    - Every Part-N-*/Lecture-NN-*/ folder with empty code-1..code-6 stubs and a review-7.md stub (Section 10.4)
    - 02-Interview-Questions/README.md (Section 11 template, full question list + source map)
    - One README.md per question folder (Section 12 template, Source line last)
-   - 03-Final-Project/README.md (Section 13 template, real business scenario, milestones 00..NN,
+   - 03-Visual-Maps/README.md (Section 13 template, full map list + standards)
+   - One README.md + empty map.md per map folder (Section 13 templates)
+   - 04-Final-Project/README.md (Section 14 template, real business scenario, milestones 00..NN,
      concept coverage for every lecture)
-   - .cursor/rules/template-sync.mdc (copied exactly from Section 18)
+   - .cursor/rules/template-sync.mdc (copied exactly from Section 19)
    - Keep template.md in the repo root and set its "Template last synced" date to today
 5. Do NOT write any learner content: the code-N stubs stay empty, review-N.md stubs keep their blanks,
    and notes.md, Milestone/, src/, tests/ are not created.
 6. Follow every naming convention in Section 7.
-7. Finish by running the Repository Creation Checklist in Section 16 and report any item that failed.
+7. Finish by running the Repository Creation Checklist in Section 17 and report any item that failed.
 8. Series without overlap (Section 3, principle 15): read the curricula of the previous and next repos first.
    Do not repeat any of their lectures or questions; list their topics in OUT OF SCOPE with pointers.
-9. From now on, follow the Template Sync Rule (Section 18): any change to structure, conventions,
+9. From now on, follow the Template Sync Rule (Section 19): any change to structure, conventions,
    or method must update template.md in the same change.
 10. Living repo (Section 3, principle 16): include the Staying Current section in the root README.
     When a new version is released, update this same repo with Section 4.4.
@@ -1905,12 +2171,16 @@ Interview practice:
   Act as defined in 02-Interview-Questions/README.md. Take the next question without ✅
   and run the Interview Question Session Cycle.
 
+Visual maps:
+  Act as defined in 03-Visual-Maps/README.md. Take the next map without ✅
+  and run the Visual Map Session Cycle. Do not draw my diagram for me.
+
 Final project:
-  Act as the mentor defined in 03-Final-Project/README.md. I am on Milestone NN.
+  Act as the mentor defined in 04-Final-Project/README.md. I am on Milestone NN.
   Run the Mentor Session Flow. Review my code; do not write the solution files.
 
 Mark progress (after I pass the CHECK):
-  Apply the Progress Update Protocol in template.md Section 15 for Lecture NN / Question NN / Milestone NN.
+  Apply the Progress Update Protocol in template.md Section 16 for Lecture NN / Question NN / Map NN / Milestone NN.
 
 Update to a new version (when a new version is released):
   Run the Version update procedure in template.md Section 4.4 for {{SUBJECT}} <new version>.
@@ -1918,13 +2188,13 @@ Update to a new version (when a new version is released):
   list catch-up items for lectures I already completed, and add a Version History row.
 
 Sync the template (after changing structure, conventions, or method):
-  Apply the Template Sync Rule in template.md Section 18. Compare the repo with template.md,
+  Apply the Template Sync Rule in template.md Section 19. Compare the repo with template.md,
   update every outdated section, and report what changed.
 ````
 
 ---
 
-## 18. Template Sync Rule (Keep This File a Mirror)
+## 19. Template Sync Rule (Keep This File a Mirror)
 
 `template.md` is only useful if it matches the repository exactly. An outdated template silently
 spreads old structure and old rules into every future repo. Therefore:
@@ -1932,30 +2202,32 @@ spreads old structure and old rules into every future repo. Therefore:
 > **Rule:** `template.md` must always be an exact, subject-neutral mirror of the repository's
 > structure, conventions, and method. Any change that makes it outdated must update it **in the same change**.
 
-### 18.1 What triggers an update
+### 19.1 What triggers an update
 
 | Change in the repo | Update in `template.md` |
 |:---|:---|
-| Track, part, folder, or file naming changes | Sections 6, 7 (+ 8–13 where names appear) |
+| Track, part, folder, or file naming changes | Sections 6, 7 (+ 8–14 where names appear) |
 | Root `README.md` sections added, removed, or reordered | Section 8 |
 | `01-Lectures/README.md` rules, method, or section order | Section 9 |
 | `code-N`, `review-N.md`, or `Milestone/` format | Section 10 |
 | `02-Interview-Questions/README.md` rules or section order | Section 11 |
 | Question folder `README.md` format | Section 12 |
-| `03-Final-Project/README.md` rules or section order | Section 13 |
+| `03-Visual-Maps/README.md` or map folder format | Section 13 |
+| `04-Final-Project/README.md` rules or section order | Section 14 |
 | Source, citation, or freshness rules | Sections 3, 4 |
-| Lecture / question / milestone sizing logic | Section 5 |
-| Progress tracking (which files get updated, how) | Section 15 |
-| New required file, tool, or check | Sections 6, 16, 17 |
+| Lecture / question / map / milestone sizing logic | Section 5 |
+| Progress tracking (which files get updated, how) | Section 16 |
+| New required file, tool, or check | Sections 6, 17, 18 |
 | A new placeholder | Section 2 |
-| This rule file changes | Section 18.3 |
+| This rule file changes | Section 19.3 |
 
-### 18.2 What does NOT trigger an update
+### 19.2 What does NOT trigger an update
 
-Learner and subject-specific content: `code-N` files, `review-N.md` text, progress check marks,
-lecture or question wording that only applies to the current subject, and final-project code.
+Learner and subject-specific content: `code-N` files, `review-N.md` text, filled `map.md` diagrams,
+progress check marks, lecture/question/map wording that only applies to the current subject,
+and final-project code.
 
-### 18.3 Enforcement (copy into every repo)
+### 19.3 Enforcement (copy into every repo)
 
 Every repository built from this template contains this file at `.cursor/rules/template-sync.mdc`.
 Because it is always applied, the AI assistant checks the sync on every change automatically.
@@ -1976,7 +2248,7 @@ A change that makes `template.md` outdated is an incomplete change.
 Any change to the repo's **structure, conventions, or method**, for example:
 
 - Adding, removing, renaming, or reordering tracks, part folders, or folder/file naming patterns
-- Changing the format of `review-N.md`, `code-N` files, question `README.md`, `notes.md`, or `Milestone/`
+- Changing the format of `review-N.md`, `code-N` files, question `README.md`, `notes.md`, `map.md`, or `Milestone/`
 - Adding, removing, or reordering sections in the root `README.md` or any track `README.md`
 - Changing rules: the iterative cycle, 3-phase method, language rules, code standards, tutor role,
   source/citation rules, checklists, milestone rules, session flow, or "What Not To Do"
@@ -1985,8 +2257,8 @@ Any change to the repo's **structure, conventions, or method**, for example:
 
 ## What does NOT require an update
 
-Learner content and subject-specific content: `code-N` files, `review-N.md` text, progress check marks,
-lecture/question wording that only applies to this subject, and project code.
+Learner content and subject-specific content: `code-N` files, `review-N.md` text, filled `map.md` diagrams,
+progress check marks, lecture/question/map wording that only applies to this subject, and project code.
 
 ## How to update
 
@@ -1994,28 +2266,28 @@ lecture/question wording that only applies to this subject, and project code.
    defined in its Section 2 instead of subject-specific values.
 2. If a new placeholder is introduced, define it in Section 2.
 3. If a new required file or check is introduced, add it to Section 6 (structure),
-   Section 16 (checklist), and Section 17 (AI prompt).
-4. If this rule file itself changes, update its copy in Section 18 of `template.md`.
+   Section 17 (checklist), and Section 18 (AI prompt).
+4. If this rule file itself changes, update its copy in Section 19 of `template.md`.
 5. Update the `Template last synced` date at the top of `template.md` to today.
 6. Verify: code fences are balanced, Table of Contents links resolve, and every upper-case placeholder is defined.
 7. In the final response, state which `template.md` sections were updated, or state
    "template.md: no update needed" with the reason.
 ````
 
-### 18.4 Manual sync check (when in doubt)
+### 19.4 Manual sync check (when in doubt)
 
 Run this whenever you are unsure whether the template is still accurate:
 
 ```
 - [ ] Every folder/file pattern in the repo matches Sections 6 and 7.
-- [ ] Every section heading of each README in the repo appears, in the same order, in Sections 8–13.
-- [ ] The study card and question README formats match Sections 10 and 12 exactly.
-- [ ] The progress steps actually used match Section 15.
-- [ ] `.cursor/rules/template-sync.mdc` matches the copy in Section 18.3.
+- [ ] Every section heading of each README in the repo appears, in the same order, in Sections 8–14.
+- [ ] The study card, question README, and map README formats match Sections 10, 12, and 13 exactly.
+- [ ] The progress steps actually used match Section 16.
+- [ ] `.cursor/rules/template-sync.mdc` matches the copy in Section 19.3.
 - [ ] The `Template last synced` date at the top is updated.
 ```
 
-### 18.5 Improvements flow back
+### 19.5 Improvements flow back
 
 If a future repo improves the method (a better rule, a clearer file format, a new useful check),
 apply the same improvement to `template.md` in that repo **and** to your master copy of `template.md`,
