@@ -1,5 +1,5 @@
 > 🛤️ **Part of [Galhoom Path](https://github.com/galhoom-path)** · Track 1 — Study (Learning Series **#1**)  
-> This repository belongs to the **Galhoom Path** organization (**Study** · **Problem Solving** · **Interview Prep** · **Projects**).  
+> This repository belongs to the **Galhoom Path** organization (**Study** · **Foundations** · **Problem Solving** · **Interview Prep** · **Projects**).  
 > → [Organization home](https://github.com/galhoom-path) · Next in series: [php-oop](https://github.com/galhoom-path/php-oop)
 
 <div align="center">
@@ -230,6 +230,10 @@ PHP powers a large part of the web — from WordPress and Laravel to custom APIs
 <td><strong>Practice interview questions</strong> — explain what you know with confidence</td>
 </tr>
 <tr>
+<td align="center">🗺️</td>
+<td><strong>Draw visual maps</strong> — flows, sequences, and one end-to-end system diagram (Mermaid)</td>
+</tr>
+<tr>
 <td align="center">🏆</td>
 <td><strong>Build a real capstone project</strong> — a working web app without a framework</td>
 </tr>
@@ -294,14 +298,14 @@ PHP powers a large part of the web — from WordPress and Laravel to custom APIs
 <div align="center">
 
 ```
-        ╭──────────────────────────────────────────────────────╮
-        │                                                      │
-        │   📚  TRACK 1          💼  TRACK 2        🏗️  TRACK 3   │
-        │   ──────────          ──────────        ──────────   │
-        │  30 Lectures ──▶ 45 Questions ──▶ 12 Maps ──▶ Project │
-        │   Official Docs       Interview Ready   BookIt Lite    │
-        │                                                      │
-        ╰──────────────────────────────────────────────────────╯
+        ╭──────────────────────────────────────────────────────────────────╮
+        │                                                                  │
+        │  📚 TRACK 1    💼 TRACK 2    🗺️ TRACK 3    🏗️ TRACK 4            │
+        │  Lectures  ──▶ Interviews ──▶ Visual Maps ──▶ Final Project     │
+        │  30 sessions   45 questions   12 diagrams     BookIt Lite        │
+        │  Learn         Explain        See the system  Build              │
+        │                                                                  │
+        ╰──────────────────────────────────────────────────────────────────╯
                               │
                               ▼
                  🏅  PHP Fundamentals Mastered
