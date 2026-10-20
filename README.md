@@ -231,7 +231,7 @@ PHP powers a large part of the web — from WordPress and Laravel to custom APIs
 </tr>
 <tr>
 <td align="center">🗺️</td>
-<td><strong>Draw visual maps</strong> — flows, sequences, and one end-to-end system diagram (Mermaid)</td>
+<td><strong>Draw visual maps</strong> — Mermaid flows and one system map that look clear on GitHub</td>
 </tr>
 <tr>
 <td align="center">🏆</td>
@@ -423,7 +423,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 | | |
 |:---|:---|
 | 📂 **Track folder** | [`03-Visual-Maps/`](03-Visual-Maps/) — guide + workspace |
-| 🔢 **Maps** | **12 diagrams** — Mermaid-first, one idea each |
+| 🔢 **Maps** | **12 diagrams** — Mermaid that looks clear on GitHub, one idea each |
 | 🎯 **Goal** | See PHP as flows, sequences, and one system map before building |
 
 <br/>
