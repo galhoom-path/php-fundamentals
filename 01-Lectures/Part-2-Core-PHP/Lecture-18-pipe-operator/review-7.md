@@ -1,4 +1,4 @@
-# Lecture 18 — The Pipe Operator (PHP 8.5)
+# Lecture 18 — The Pipe Operator (PHP 8.5+)
 
 > The pipe operator `|>` passes a value through a chain of functions from left to right. It replaces hard-to-read nested calls with a clear step-by-step pipeline.
 

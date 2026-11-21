@@ -2,14 +2,14 @@
 name: php-fundamentals-tutor
 purpose: >
   This file has exactly one purpose: to serve as the single learning source for
-  studying the core PHP language (PHP 8.5+) before Object-Oriented Programming.
+  studying the core PHP language (PHP 8.6+) before Object-Oriented Programming.
 scope: >
   This file should only contain guidance, curriculum, rules, examples, and
   progress notes that directly support learning core, procedural, and web PHP
-  in PHP 8.5+. Anything taught in the PHP OOP repository is out of scope.
+  in PHP 8.6+. Anything taught in the PHP OOP repository is out of scope.
 description: >
   Structured, iterative tutoring skill for teaching the core PHP language
-  (targeting PHP 8.5+) to complete beginners with no computer science
+  (targeting PHP 8.6+) to complete beginners with no computer science
   background. Trigger this skill whenever the user wants to learn PHP from
   zero, says "next lecture", "continue PHP course", or asks about PHP
   variables, types, strings, arrays, functions, closures, forms, sessions,
@@ -23,7 +23,7 @@ triggers:
   - user mentions core PHP at beginner or intermediate level
 ---
 
-# PHP Fundamentals (PHP 8.5+) - Iterative Tutor Skill
+# PHP Fundamentals (PHP 8.6+) - Iterative Tutor Skill
 
 ## Who This Is For
 
@@ -44,7 +44,7 @@ Deliver exactly one lecture per session unless the student explicitly requests t
 ```
 Part 1 — Foundations (Lectures 1–10)  →  Part-1-Foundations/
 Lecture 1  - why-php                                 The Problem: Why Static Pages Are Not Enough
-Lecture 2  - setup-and-first-script                  Installing PHP 8.5 and Running Your First Script
+Lecture 2  - setup-and-first-script                  Installing PHP 8.6 and Running Your First Script
 Lecture 3  - variables-and-constants                 Storing Values: Variables and Constants
 Lecture 4  - data-types                              Scalar Types and null
 Lecture 5  - Milestone-operators                     Operators: Calculating, Comparing, and Combining
@@ -56,13 +56,13 @@ Lecture 10 - loops                                   Repeating Work: while, for,
 
 Part 2 — Core PHP (Lectures 11–20)  →  Part-2-Core-PHP/
 Lecture 11 - arrays                                  Indexed, Associative, and Nested Arrays
-Lecture 12 - array-functions                         Searching, Sorting, and Slicing Arrays (PHP 8.5 array_first/array_last)
+Lecture 12 - array-functions                         Searching, Sorting, and Slicing Arrays (8.5+ array_first/array_last; 8.6 clamp)
 Lecture 13 - functions                               Writing Your Own Functions
 Lecture 14 - function-arguments                      Default, Named, Variadic, and By-Reference Arguments
 Lecture 15 - Milestone-scope-and-static-variables    Variable Scope, global, and static Variables
 Lecture 16 - anonymous-and-arrow-functions           Functions Without Names
 Lecture 17 - callbacks-and-first-class-callables     Passing Functions to Functions
-Lecture 18 - pipe-operator                           Chaining Steps with the Pipe Operator (PHP 8.5)
+Lecture 18 - pipe-operator                           Chaining Steps with the Pipe Operator (PHP 8.5+)
 Lecture 19 - generators                              Producing Values One at a Time with yield
 Lecture 20 - include-and-require                     Splitting a Program Into Files
 
@@ -333,7 +333,7 @@ A car dashboard. Warning lights (notices and warnings) tell you something is wro
 
 All code in every lecture must follow these rules:
 
-1. Version: target PHP 8.5 or newer. Mention the version in Lecture 2 and never assume an older version
+1. Version: target PHP 8.6 or newer. Mention the version in Lecture 2 and never assume an older version
 2. Every code block starts with `<?php`. Do not add a closing `?>` in files that contain only PHP
 3. Procedural code only: no classes, interfaces, traits, enums, `try/catch`, or namespaces. Those belong to the PHP OOP repository
 4. Do not use `declare(strict_types=1);` or parameter/return type declarations; they are taught in PHP OOP Lectures 5 and 16. Lecture 6 explains why they will matter
@@ -341,8 +341,8 @@ All code in every lecture must follow these rules:
 6. Always show the full example unless a snippet is explicitly labeled "partial example"
 7. Annotate every line of every code snippet. Zero uncommented lines
 8. Every code block has a label above it stating what file it belongs to (`code-N.php`)
-9. When introducing a new feature (match, named arguments, arrow functions, pipe operator, generators), explain it in 2 to 3 sentences before using it in code
-10. Examples must be secure by default: escape all output with `htmlspecialchars()` once Lecture 23 is reached, validate all input, never hardcode real secrets, never use deprecated APIs (for example the backtick operator or `(integer)` casts, deprecated in PHP 8.5)
+9. When introducing a new feature (match, named arguments, arrow functions, pipe operator, partial application, clamp, generators), explain it in 2 to 3 sentences before using it in code
+10. Examples must be secure by default: escape all output with `htmlspecialchars()` once Lecture 23 is reached, validate all input, never hardcode real secrets, never use deprecated APIs (backtick / `(integer)` from 8.5; `return` in `finally`, `mb_ereg*`, `is_long`/`is_double`, `spl_object_hash` from 8.6)
 11. CLI lectures run with `php code-N.php`. Web lectures (Part 3) run with `php -S localhost:8000` inside the lecture folder
 
 ---
@@ -467,8 +467,8 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 
 ---
 
-### Lecture 2 - Installing PHP 8.5 and Running Your First Script
-**Goal:** Install PHP 8.5, run a script from the terminal, and serve a page in the browser.
+### Lecture 2 - Installing PHP 8.6 and Running Your First Script
+**Goal:** Install PHP 8.6, run a script from the terminal, and serve a page in the browser.
 **Concepts:**
 - PHP tags, `echo`, and comments
 - Running PHP with the CLI and with the built-in web server
@@ -477,7 +477,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Use the translator analogy and name the Zend Engine as that translator's core
 - Say a `.php` file is plain text on disk — it cannot run itself. Typing `php app.php` asks the OS to start the installed `php` program (the CLI SAPI), which reads the file and runs it
 - One sentence only: PHP does not talk to the screen or disk by itself; it asks the operating system (via the OS API / system calls) to print, read files, and allocate memory. Do not teach Linux internals
-- Install PHP 8.5 for the student's operating system and verify with `php -v`
+- Install PHP 8.6 for the student's operating system and verify with `php -v`
 - Show the smallest script: `<?php echo "Hello";` and run it with `php code-1.php`
 - Show the three comment styles and say every example in this course annotates every line
 - Show mixing PHP and HTML in one `.php` file: PHP runs on the server; the browser receives the finished HTML (and any CSS/JS you echoed or wrote outside PHP tags)
@@ -649,10 +649,11 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 
 ---
 
-### Lecture 12 - Searching, Sorting, and Slicing Arrays (PHP 8.5 array_first/array_last)
+### Lecture 12 - Searching, Sorting, and Slicing Arrays (8.5+ array_first/array_last; 8.6 clamp)
 **Goal:** Use built-in array functions instead of writing manual loops.
 **Concepts:**
-- Searching and inspecting: `count`, `in_array`, `array_key_exists`, `array_search`, `array_keys`, `array_values`, and PHP 8.5 `array_first` / `array_last`
+- Searching and inspecting: `count`, `in_array`, `array_key_exists`, `array_search`, `array_keys`, `array_values`, and PHP 8.5+ `array_first` / `array_last`
+- **PHP 8.6:** show `clamp($n, 0, 100)` for percentage/page-size bounds instead of nested min/max
 - Sorting and combining: `sort`, `rsort`, `asort`, `ksort`, `array_slice`, `array_merge`, `+`, and the spread `[...$a, ...$b]`
 **Content:**
 - Use the librarian analogy
@@ -726,7 +727,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show `use ($rate)` and prove that later changes to `$rate` are not seen
 - Show `use (&$total)` and prove the outside variable changes
 - Show the same logic as an arrow function and its one-expression limit
-- Note that PHP 8.5 allows a closure as a default parameter value or constant value
+- Note that PHP 8.6 allows a closure as a default parameter value or constant value
 - Mention that these values are `Closure` objects; objects themselves are taught in the PHP OOP repo
 **PHP Manual Reference:** https://www.php.net/manual/en/functions.anonymous.php
 
@@ -745,11 +746,14 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show `usort` sorting users by age with `<=>`
 - Show the PHP 8.4 functions `array_find()`, `array_find_key()`, `array_any()`, and `array_all()`
 - Show passing `trim(...)` and `strtoupper(...)` as callbacks
+- **PHP 8.6 — Partial Function Application:** show `array_filter($versions, version_compare(?, '8.6', '>='))` instead of a noisy arrow wrapper. Placeholders `?` / `...` produce a `Closure`
+- Contrast first-class callables (`strlen(...)`) with partial application (`version_compare(?, '8.6', '>=')`)
 **PHP Manual Reference:** https://www.php.net/manual/en/functions.first_class_callable_syntax.php
+**Also:** https://www.php.net/manual/en/migration86.new-features.php (Partial Function Application)
 
 ---
 
-### Lecture 18 - Chaining Steps with the Pipe Operator (PHP 8.5)
+### Lecture 18 - Chaining Steps with the Pipe Operator (PHP 8.5+)
 **Goal:** Replace nested function calls with a readable left-to-right pipeline.
 **Concepts:**
 - The pipe operator `|>` with single-parameter callables
@@ -761,6 +765,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Explain that arrow functions MUST be wrapped in parentheses in a pipeline
 - Show that functions needing more than one required argument or a by-reference argument cannot be piped directly
 - Build a slug generator and a small data-cleaning pipeline over an array
+- Combine pipe with a partial from Lecture 17 when a step needs a fixed argument
 **PHP Manual Reference:** https://www.php.net/manual/en/language.operators.functional.php
 
 ---
@@ -815,7 +820,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show common status codes in plain English: `200` OK, `301`/`302` redirect, `403` forbidden, `404` not found, `500` server error — then set a `404` and a `Location` redirect followed by `exit` in code
 - Explain the "headers already sent" error and why output must come after headers
 - Warn that every value from `$_GET` is untrusted text (validation comes in Lecture 23)
-- Show `parse_url()` on a full URL and name the main parts: scheme (`https`), host, path, query — mention that the PHP 8.5 URI extension is object-based and is used after the PHP OOP repo
+- Show `parse_url()` on a full URL and name the main parts: scheme (`https`), host, path, query — mention that the PHP 8.6 URI extension is object-based and is used after the PHP OOP repo
 - Point students to the MDN HTTP and client–server pages in Official Sources when they want the web-standard view
 **PHP Manual Reference:** https://www.php.net/manual/en/language.variables.superglobals.php
 
@@ -850,7 +855,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show `filter_var($email, FILTER_VALIDATE_EMAIL)` and `FILTER_VALIDATE_INT` with options
 - Collect errors in an array and re-display the form with old values escaped
 - Rule: validate on input, escape on output
-- Mention that the PHP 8.5 `FILTER_THROW_ON_FAILURE` flag uses exceptions, which are taught in PHP OOP Lecture 25
+- Mention that the PHP 8.6 `FILTER_THROW_ON_FAILURE` flag uses exceptions, which are taught in PHP OOP Lecture 25
 **PHP Manual Reference:** https://www.php.net/manual/en/function.htmlspecialchars.php
 
 ---
@@ -869,7 +874,9 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show logging out: clear `$_SESSION`, delete the cookie, `session_destroy()`
 - Show `setcookie()` with an options array and reading `$_COOKIE`
 - Explain why sensitive data goes in the session, never in a plain cookie
-- Mention the PHP 8.5 `partitioned` cookie option and the PHP 8.5 warning for `$_SESSION` keys containing `|`
+- Mention the PHP 8.5 warning for `$_SESSION` keys containing `|`
+- **PHP 8.6 session defaults:** `session.use_strict_mode` and `session.cookie_httponly` are on; `session.cookie_samesite` defaults to `Lax` — keep them
+- Custom session handlers must implement `create_sid()` and `validateId()`
 **PHP Manual Reference:** https://www.php.net/manual/en/book.session.php
 
 ---
@@ -903,7 +910,10 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Validate size, check the real MIME type with `finfo_file()`, generate a new file name, and store outside the web root when possible
 - Note that PHP 8.5 deprecates `finfo_close()`; the handle is freed automatically
 - Show the path traversal attack (`../../`) and block it with `basename()` and a fixed folder
+- **PHP 8.6 stream errors:** prefer stream context `StreamErrorMode::Exception` over `@file_get_contents` + `error_get_last()`
+- Show `clamp($value, $min, $max)` for upload size / pagination bounds instead of nested `min`/`max`
 **PHP Manual Reference:** https://www.php.net/manual/en/features.file-upload.php
+**Also:** https://www.php.net/manual/en/migration86.new-features.php
 
 ---
 
@@ -921,6 +931,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show storing a list of notes in a JSON file
 - Show setting the time zone, formatting `date('Y-m-d H:i')`, and adding days with `strtotime('+7 days')`
 - Mention that the object-based date API (`DateTimeImmutable`) is learned after the PHP OOP repo
+- **PHP 8.6 preview:** `Time\Duration` for timeouts/backoff — peek only; full object use waits for OOP
 **PHP Manual Reference:** https://www.php.net/manual/en/book.json.php
 
 ---
@@ -937,6 +948,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show `preg_replace` cleaning extra spaces and the `u` flag for UTF-8 text
 - Show `preg_quote()` for user input inside a pattern
 - Advise using a normal string function when it is enough (`str_contains` before regex)
+- **PHP 8.6 stop:** never teach `mb_ereg*` / `mb_split` — stay on `preg_*` with the `u` modifier for UTF-8
 **PHP Manual Reference:** https://www.php.net/manual/en/book.pcre.php
 
 ---
@@ -970,7 +982,7 @@ Below is what each lecture must cover. The tutor must follow this outline but de
 - Show development settings (display all errors) vs production settings (log, do not display) in `php.ini`
 - Show writing a custom message to a log file with `error_log()`
 - Show why the `@` error-suppression operator hides bugs, and avoid it
-- Mention that PHP 8.5 adds a backtrace to fatal errors, and show reading it
+- Mention that PHP 8.6 adds a backtrace to fatal errors, and show reading it
 - Show a small `checks.php` script that uses `assert()` with `zend.assertions=1` to verify helper functions from Lecture 29
 - Mention that real automated testing (PHPUnit) is taught in PHP OOP Lecture 31
 **PHP Manual Reference:** https://www.php.net/manual/en/errorfunc.configuration.php

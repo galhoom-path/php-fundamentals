@@ -18,7 +18,7 @@ triggers:
   - user asks for project review after finishing lectures, interviews, and visual maps
 ---
 
-# PHP Fundamentals Final Project (PHP 8.5+) - BookIt Lite
+# PHP Fundamentals Final Project (PHP 8.6+) - BookIt Lite
 
 > **Status:** Not started — This folder is the student's workspace for the PHP Fundamentals final project.
 
@@ -178,7 +178,7 @@ This structure is a target, not a starting dump. The student creates files gradu
 
 ## Development Rules
 
-1. Use PHP 8.5 or newer.
+1. Use PHP 8.6 or newer.
 2. Procedural PHP only: functions, arrays, and files. No classes, interfaces, enums, exceptions, or namespaces.
 3. Keep each file focused on one clear responsibility.
 4. Load files with `require_once __DIR__ . '/...'`.

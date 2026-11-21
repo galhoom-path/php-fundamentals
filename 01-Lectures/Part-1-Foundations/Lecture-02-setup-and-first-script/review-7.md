@@ -1,6 +1,6 @@
 # Lecture 02 — Setup and First Script
 
-> PHP 8.5 runs your code from the terminal with the CLI or in the browser through the built-in server. Every script starts with the `<?php` tag, prints with `echo`, and explains itself with comments.
+> PHP 8.6 runs your code from the terminal with the CLI or in the browser through the built-in server. Every script starts with the `<?php` tag, prints with `echo`, and explains itself with comments.
 
 ---
 

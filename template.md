@@ -88,7 +88,7 @@ After generating a repo, a search for `{{` outside `template.md` must return no 
 | `{{SUBJECT}}` | Full subject name | `PHP OOP` |
 | `{{SUBJECT_SLUG}}` | kebab-case slug used in skill names | `php-oop` |
 | `{{SUBJECT_FULL_TITLE}}` | Long title for the README header | `Object-Oriented Programming in PHP` |
-| `{{SUBJECT_VERSION}}` | Latest stable version targeted | `PHP 8.5+` |
+| `{{SUBJECT_VERSION}}` | Latest stable version targeted | `PHP 8.6+` |
 | `{{SUBJECT_EMOJI}}` | One emoji representing the subject | `🐘` |
 | `{{LANGUAGE_OR_TOOL}}` | Language/tool used for practice files | `PHP` |
 | `{{FILE_EXT}}` | Extension of practice files | `php` (for non-technical subjects use `md` and name files `practice-N.md`, see [Section 14](#14-adapting-to-non-technical-subjects)) |
@@ -104,7 +104,7 @@ After generating a repo, a search for `{{` outside `template.md` must return no 
 | `{{PART_1_NAME}}`, `{{PART_2_NAME}}`, `{{PART_3_NAME}}`, `{{PART_4_NAME}}` | Name of each part (Title-Case, hyphenated). Templates show 3 parts; add or remove part blocks to match `{{PART_COUNT}}` | `Foundations`, `Core-OOP`, `Modern-PHP` |
 | `{{MILESTONE_LECTURES}}` | Lecture numbers that are milestones | `05, 15, 24, 31` |
 | `{{M1}}`, `{{M2}}`, `{{M3}}` | The first three milestone lecture numbers (the 4th is always the last lecture) | `05`, `15`, `24` |
-| `{{SUBJECT_URL_ENCODED}}` / `{{SUBJECT_VERSION_URL_ENCODED}}` | Values encoded for shields.io badges: space → `%20`, `+` → `%2B`, `/` → `%2F`, `-` → `--`. The version badge uses the **version number only**, because the badge label already shows `{{LANGUAGE_OR_TOOL}}` | `PHP%20OOP` / `8.5%2B` |
+| `{{SUBJECT_URL_ENCODED}}` / `{{SUBJECT_VERSION_URL_ENCODED}}` | Values encoded for shields.io badges: space → `%20`, `+` → `%2B`, `/` → `%2F`, `-` → `--`. The version badge uses the **version number only**, because the badge label already shows `{{LANGUAGE_OR_TOOL}}` | `PHP%20OOP` / `8.6%2B` |
 | `{{SPACED UPPERCASE SUBJECT}}` | Subject in spaced capitals for the ASCII banner | `P H P   O O P` |
 | `{{QUESTION_COUNT}}` | Total interview questions | `42` |
 | `{{MAP_COUNT}}` | Total visual maps (about 0.3–0.5 × lecture count) | `12` |
@@ -2171,7 +2171,7 @@ You are generating a study repository using the attached template.md exactly.
 
 SUBJECT: <e.g. Design Patterns in PHP>
 LEARNER PROFILE: <e.g. knows PHP OOP well, no design-pattern experience>
-PREREQUISITES: <e.g. PHP 8.5 OOP: classes, interfaces, abstract classes, traits>
+PREREQUISITES: <e.g. PHP 8.6 OOP: classes, interfaces, abstract classes, traits>
 OUT OF SCOPE: <e.g. framework-specific implementations, architecture styles>
 PREVIOUS REPO IN THE SERIES: <name + URL, or None>
 NEXT REPO IN THE SERIES: <name + URL, or None>

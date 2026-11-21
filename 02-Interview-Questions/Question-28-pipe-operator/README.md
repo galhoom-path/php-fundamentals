@@ -1,4 +1,4 @@
-# Question 28 - What is the pipe operator in PHP 8.5, and what problem does it solve?
+# Question 28 - What is the pipe operator in PHP 8.6, and what problem does it solve?
 
 Status: Not completed
 Related lecture: Lecture 18
@@ -6,11 +6,11 @@ Folder: `02-Interview-Questions/Question-28-pipe-operator/`
 
 ## Interview Question
 
-What is the pipe operator in PHP 8.5, and what problem does it solve?
+What is the pipe operator in PHP 8.6, and what problem does it solve?
 
 ## What The Interviewer Is Testing
 
-Whether you know the newest PHP 8.5 language feature and its limits.
+Whether you know the newest PHP 8.6 language feature and its limits.
 
 ## A Strong Answer Should Cover
 

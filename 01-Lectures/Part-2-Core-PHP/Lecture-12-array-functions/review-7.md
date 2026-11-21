@@ -1,6 +1,6 @@
 # Lecture 12 — Array Functions
 
-> Built-in array functions count, search, sort, slice, and combine arrays without manual loops. PHP 8.5 adds `array_first()` and `array_last()` to read the ends of an array directly.
+> Built-in array functions count, search, sort, slice, and combine arrays without manual loops. PHP 8.6 adds `array_first()` and `array_last()` to read the ends of an array directly.
 
 ---
 

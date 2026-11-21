@@ -14,7 +14,7 @@ Whether you debug with a method instead of guessing.
 
 ## A Strong Answer Should Cover
 
-- Read the full error message and line number first; PHP 8.5 adds a backtrace to fatal errors.
+- Read the full error message and line number first; PHP 8.6 adds a backtrace to fatal errors.
 - Inspect values with `var_dump()` / `print_r()` and write messages to a log with `error_log()`.
 - Reproduce the problem with a small input and confirm the fix with `assert()` checks.
 

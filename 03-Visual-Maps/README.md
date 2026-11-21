@@ -7,7 +7,7 @@ scope: >
   This file should only contain map prompts, diagram standards, progress, and
   folder conventions for PHP Fundamentals visual maps. It is not a drawing-tools course.
 description: >
-  Structured visual-maps track for PHP Fundamentals (PHP 8.5+). Trigger when the
+  Structured visual-maps track for PHP Fundamentals (PHP 8.6+). Trigger when the
   student says "next visual map", "draw the system", or "start visual maps".
 triggers:
   - user wants PHP Fundamentals visual maps or diagrams
@@ -15,7 +15,7 @@ triggers:
   - user is between interview questions and the final project
 ---
 
-# PHP Fundamentals Visual Maps (PHP 8.5+) - See the System
+# PHP Fundamentals Visual Maps (PHP 8.6+) - See the System
 
 ## Who This Is For
 

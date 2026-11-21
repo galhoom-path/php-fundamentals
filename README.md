@@ -10,7 +10,7 @@
 
 <br/>
 
-![PHP](https://img.shields.io/badge/PHP-8.5%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.6%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Focus](https://img.shields.io/badge/Focus-PHP%20Fundamentals-2563EB?style=for-the-badge)
 ![Source](https://img.shields.io/badge/Source-Official%20PHP%20Manual-059669?style=for-the-badge)
 ![Tracks](https://img.shields.io/badge/Tracks-4-D97706?style=for-the-badge)
@@ -32,7 +32,7 @@
 <br/>
 
 > 🎯 **This repo is for those who want to study the core PHP language from zero**
-> with **PHP 8.5+**. All lectures follow the
+> with **PHP 8.6+**. All lectures follow the
 > [**official PHP Manual**](https://www.php.net/manual/en/langref.php),
 > with interview questions, visual maps, and a final project to master it all.
 > It is the **first link** in a series: **PHP Fundamentals → [PHP OOP](https://github.com/galhoom-path/php-oop) → OOD**.
@@ -127,7 +127,7 @@
 | # | Folder | Topic | Status |
 |:---:|:---|:---|:---:|
 | 01 | [`why-php`](01-Lectures/Part-1-Foundations/Lecture-01-why-php/) | Why Static Pages Are Not Enough | 🟡 **Next** |
-| 02 | [`setup-and-first-script`](01-Lectures/Part-1-Foundations/Lecture-02-setup-and-first-script/) | Installing PHP 8.5 and Your First Script | ⬜ |
+| 02 | [`setup-and-first-script`](01-Lectures/Part-1-Foundations/Lecture-02-setup-and-first-script/) | Installing PHP 8.6 and Your First Script | ⬜ |
 | 03 | [`variables-and-constants`](01-Lectures/Part-1-Foundations/Lecture-03-variables-and-constants/) | Variables and Constants | ⬜ |
 | 04 | [`data-types`](01-Lectures/Part-1-Foundations/Lecture-04-data-types/) | Scalar Types and `null` | ⬜ |
 | 05 | [`Milestone-operators`](01-Lectures/Part-1-Foundations/Lecture-05-Milestone-operators/) | Operators *(Milestone)* | ⬜ |
@@ -149,13 +149,13 @@
 | # | Folder | Topic | Status |
 |:---:|:---|:---|:---:|
 | 11 | [`arrays`](01-Lectures/Part-2-Core-PHP/Lecture-11-arrays/) | Indexed, Associative, and Nested Arrays | ⬜ |
-| 12 | [`array-functions`](01-Lectures/Part-2-Core-PHP/Lecture-12-array-functions/) | Array Functions *(incl. PHP 8.5 `array_first`)* | ⬜ |
+| 12 | [`array-functions`](01-Lectures/Part-2-Core-PHP/Lecture-12-array-functions/) | Array Functions *(8.5+ `array_first`; 8.6 `clamp`)* | ⬜ |
 | 13 | [`functions`](01-Lectures/Part-2-Core-PHP/Lecture-13-functions/) | Writing Your Own Functions | ⬜ |
 | 14 | [`function-arguments`](01-Lectures/Part-2-Core-PHP/Lecture-14-function-arguments/) | Default, Named, Variadic, By-Reference | ⬜ |
 | 15 | [`Milestone-scope-and-static-variables`](01-Lectures/Part-2-Core-PHP/Lecture-15-Milestone-scope-and-static-variables/) | Scope and Static Variables *(Milestone)* | ⬜ |
 | 16 | [`anonymous-and-arrow-functions`](01-Lectures/Part-2-Core-PHP/Lecture-16-anonymous-and-arrow-functions/) | Anonymous and Arrow Functions | ⬜ |
 | 17 | [`callbacks-and-first-class-callables`](01-Lectures/Part-2-Core-PHP/Lecture-17-callbacks-and-first-class-callables/) | Callbacks and First-Class Callables | ⬜ |
-| 18 | [`pipe-operator`](01-Lectures/Part-2-Core-PHP/Lecture-18-pipe-operator/) | The Pipe Operator *(PHP 8.5)* | ⬜ |
+| 18 | [`pipe-operator`](01-Lectures/Part-2-Core-PHP/Lecture-18-pipe-operator/) | The Pipe Operator *(PHP 8.5+; pairs with 8.6 PFA)* | ⬜ |
 | 19 | [`generators`](01-Lectures/Part-2-Core-PHP/Lecture-19-generators/) | Generators and `yield` | ⬜ |
 | 20 | [`include-and-require`](01-Lectures/Part-2-Core-PHP/Lecture-20-include-and-require/) | Splitting Code Into Files | ⬜ |
 
@@ -219,7 +219,7 @@ PHP powers a large part of the web — from WordPress and Laravel to custom APIs
 <table>
 <tr>
 <td width="50" align="center">🧩</td>
-<td><strong>Learn every core concept</strong> of the PHP language using <code>PHP 8.5+</code></td>
+<td><strong>Learn every core concept</strong> of the PHP language using <code>PHP 8.6+</code></td>
 </tr>
 <tr>
 <td align="center">📜</td>
@@ -363,7 +363,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 ```
 🔤 Variables, Types & Strings     🔀 Conditions, match & Loops
 🗃️ Arrays & Array Functions       🧰 Functions, Closures & Callables
-🔗 Pipe Operator (PHP 8.5)        ♻️ Generators & yield
+🔗 Pipe + Partial App (8.5/8.6)   ♻️ Generators & yield
 🌐 HTTP, Forms & Sessions         🔐 Escaping, Passwords & CSRF
 📄 Files, JSON & Dates            🐞 Errors, Logging & Debugging
 ```
@@ -560,7 +560,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 <table>
 <tr>
 <td align="center" width="60">🐘</td>
-<td><strong>PHP 8.5+</strong> (CLI) — installed in Lecture 02</td>
+<td><strong>PHP 8.6+</strong> (CLI) — installed in Lecture 02</td>
 </tr>
 <tr>
 <td align="center">📖</td>
@@ -595,7 +595,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 
 | Version | Updated on | What changed in this repo |
 |:---|:---|:---|
-| PHP 8.5 | 2026-10-15 | Initial curriculum, verified against the PHP 8.5 migration guide |
+| PHP 8.6 | 2026-10-15 | Initial curriculum, verified against the PHP 8.6 migration guide |
 
 <br/>
 
@@ -614,7 +614,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 | Source | Link |
 |:---|:---|
 | 🐘 PHP Manual — Language Reference | [php.net/manual/en/langref.php](https://www.php.net/manual/en/langref.php) |
-| 🆕 PHP 8.5 Release Notes | [php.net/releases/8.5](https://www.php.net/releases/8.5/en.php) |
+| 🆕 PHP 8.6 Release Notes | [php.net/releases/8.6](https://www.php.net/releases/8.6/en.php) |
 | 🌐 MDN — How the Web Works | [developer.mozilla.org/.../How_the_web_works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works) |
 | 🌐 MDN — Client–Server Overview | [developer.mozilla.org/.../Client-Server_overview](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview) |
 | 🌐 MDN — HTTP Overview | [developer.mozilla.org/.../HTTP/Guides/Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview) |
@@ -623,7 +623,7 @@ Part-3-Web-PHP/       →  Lectures 21–30
 
 <br/>
 
-> 🗓️ **Last verified:** 2026-10-15 against PHP 8.5.
+> 🗓️ **Last verified:** 2026-10-15 against PHP 8.6.
 
 <br/>
 

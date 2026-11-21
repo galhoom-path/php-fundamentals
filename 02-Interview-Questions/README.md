@@ -16,7 +16,7 @@ triggers:
   - user says "next interview question"
 ---
 
-# PHP Fundamentals Interview Questions (PHP 8.5+) - Iterative Practice Track
+# PHP Fundamentals Interview Questions (PHP 8.6+) - Iterative Practice Track
 
 ## Who This Is For
 
@@ -85,7 +85,7 @@ Question 24 - What is a static variable inside a function?
 Question 25 - How do anonymous functions and arrow functions capture outside variables?
 Question 26 - What is a callable, and what is first-class callable syntax?
 Question 27 - What do array_map, array_filter, and array_reduce do?
-Question 28 - What is the pipe operator in PHP 8.5, and what problem does it solve?
+Question 28 - What is the pipe operator in PHP 8.6, and what problem does it solve?
 Question 29 - What is a generator, and why does it save memory?
 Question 30 - What is the difference between include, require, include_once, and require_once?
 Question 31 - What are superglobals?
@@ -170,7 +170,7 @@ Before answering, state:
 ### DO
 - Start with a plain-English answer that could be said in an interview.
 - Explain each important term before using it deeply.
-- If code is needed, show the smallest possible PHP 8.5+ example first.
+- If code is needed, show the smallest possible PHP 8.6+ example first.
 - Annotate every line of every code snippet.
 - Then improve the answer into a stronger interview-ready version.
 
@@ -188,7 +188,7 @@ Wait for the student's answer before moving on.
 
 ## Code Standards
 
-1. Target PHP 8.5 or newer.
+1. Target PHP 8.6 or newer.
 2. Every code block starts with `<?php`. Procedural code only: no classes, `try/catch`, namespaces, or type declarations.
 3. Naming follows PSR-12 style: `camelCase` variables and functions, `UPPER_SNAKE_CASE` constants.
 4. Keep code examples focused on the interview question.
